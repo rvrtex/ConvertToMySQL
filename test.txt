@@ -1,0 +1,1987 @@
+CREATE DATABASE  IF NOT EXISTS `Fidelty_Feed_Keys` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `Fidelty_Feed_Keys`;
+-- MySQL dump 10.13  Distrib 5.5.41, for debian-linux-gnu (x86_64)
+--
+-- Host: 127.0.0.1    Database: Fidelty_Feed_Keys
+-- ------------------------------------------------------
+-- Server version	5.5.41-0ubuntu0.14.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `ATP_Key`
+--
+
+LOCK TABLES `ATP_Key` WRITE;
+/*!40000 ALTER TABLE `ATP_Key` DISABLE KEYS */;
+INSERT INTO `ATP_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'calendar_year',NULL,0,'int','Annual Target Payment Calendar Year'),
+(3,'tgt_payment_rate',NULL,0,'float','Annual Target Payment Rate'),
+(4,'yr_ind',NULL,0,'char(1)','Current and Next Calendar Year Indicator; Values include: C = Current, N = Next');
+/*!40000 ALTER TABLE `ATP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `ATS_Key`
+--
+
+LOCK TABLES `ATS_Key` WRITE;
+/*!40000 ALTER TABLE `ATS_Key` DISABLE KEYS */;
+INSERT INTO `ATS_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year – YYYY'),
+(3,'mnth_d',NULL,0,'float','Annual Target Payment Rate'),
+(4,'load_indicator',NULL,0,'char(1)','Load indicator-Y for load adjusted, N for no-load'),
+(5,'liquid_indicator',NULL,0,'char(1)','Liquidation indicator; Y for  post-liquidation, N for pre-liquidation'),
+(6,'cum_1y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(7,'cum_3y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(8,'cum_5y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(9,'cum_10y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(10,'cum_lof',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),(11,'aa_1y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(12,'aa_3y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(13,'aa_5y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(14,'aa_10y',NULL,0,'float, 2','Load indicator -Y for load adjusted, N for no-load'),
+(15,'aa_lof',NULL,0,'float, 2','Current and Next Calendar Year Indicator; Values include: C = Current, N = Next'),
+(16,'filler',NULL,0,'NULL','Load indicator -Y for load adjusted, N for no-load'),
+(17,'filler',NULL,0,'NULL','Load indicator -Y for load adjusted, N for no-load');
+/*!40000 ALTER TABLE `ATS_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `AMP_Key`
+--
+
+LOCK TABLES `AMP_Key` WRITE;
+/*!40000 ALTER TABLE `AMP_Key` DISABLE KEYS */;
+INSERT INTO `AMP_Key` VALUES 
+(1,'COMP_CD',NULL,1,'varchar(20)','Composite code'),
+(2,'ACCT_NUM',NULL,1,'varchar(20)','Account Number'),
+(3,'ACCT_TYPE',NULL,1,'varchar(20)','Account Type'),
+(4,'STANDARD_RTN_MON_YR',NULL,1,'Date','Reporting Month and Year'),
+(5,'INCL_COMP_FLAG',NULL,0,'varchar(1)','Composite Include / Exclude Flag'),
+(6,'EXCL_COMP_REASON_TXT',NULL,0,'varchar(2048)','Composite Exclude Reason');
+/*!40000 ALTER TABLE `AMP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `APF_Key`
+--
+LOCK TABLES `APF_Key` WRITE;
+/*!40000 ALTER TABLE `APF_Key` DISABLE KEYS */;
+INSERT INTO `APF_Key` VALUES 
+
+(1,'PPS_ACCT_NBR',NULL,1,'varchar(20)','Account Number'),
+(2,'ACCT_TYPE',NULL,1,'varchar(20)','Account Type'),
+(3,'RPT_M_DATE',NULL,1,'Varchar(6)','Reporting Month'),
+(4,'SRC_COMP_STATUS',NULL,0,'Varchar(1)',NULL),
+(5,'RESULT_STATUS',NULL,0,'Varchar(1)','Result Status'),
+(6,'VALIDATION_REASON_CD',NULL,0,'Varchar(20)','Validation Reason Code'),
+(7,'PERF_SRC',NULL,0,'NUMERIC','Performance Source'),
+(8,'DSCPLN_CD',NULL,0,'Varchar(20)','Discipline Code'),
+(9,'DSCPLN_NAME',NULL,0,'Varchar(200)','Discipline Name'),
+(10,'ACCT_FIRST_M_DATE',NULL,0,'Varchar(6)','Account First Month'),
+(11,'ACCT_LAST_M_DATE',NULL,0,'Varchar(6)','Account Last Month'), 
+(12,'INV_MGR_SAI_ID',NULL,0,'Varchar(20)','Investment Manager SAI ID'), 
+(13,'STGY_CD',NULL,0,'Varchar(20)','Strategy Code'),
+(14,'TRGT_CD',NULL,0,'Varchar(20)','Target Code'),
+(15,'BMK_CK',NULL,0,'Varchar(20)','Benchmark (Z Model Benchmark) Code'),
+(16,'ST_TAX_RATE',NULL,0,'Float(7,4)','Short Term Tax Rate'),
+(17,'LT_TAX_RATE',NULL,0,'Float(7,4)','Long Term Tax Rate'),
+(18,'QUAL_DVD_TAX_RATE',NULL,0,'Float(7,4)','Qualified Dividend Tax Rate'),
+(19,'NONQUAL_DVD_TAX_RATE',NULL,0,'Float(7,4)','Non-Qualified Dividend Tax Rate'),
+(20,'CRTSRC_PORT_MON_BEG_MKTVAL',NULL,0,'Double(22,6)',NULL),
+(21,'PERFSRC_PORT_MON_BEG_MKTVAL',NULL,0,'Double(22,6)',NULL),
+(22,'ADJD_TOT_URGL_MON_BEG',NULL,0,'Float(6,6)','Adjusted Total Unrealized Gain Loss Month Begin Value'),
+(23,'CRTSRC_PORT_MON_END_MKTVAL',NULL,0,'Double(22,6)',NULL),
+(24,'PERFSRC_PORT_MON_END_MKTVAL',NULL,0,'Double(22,6)',NULL),
+(25,'ADJD_TOT_URGL_MON_END',NULL,0,'Float(6,6)','Adjusted Total Unrealized Gain Loss Month End Value'),
+(26,'AVG_CAP_GRS',NULL,0,'Double(22,6)','Average Gross Market Cap'),
+(27,'AVG_CAP_NET',NULL,0,'Double(22,6)','Average Net Market Cap'),
+(28,'ST_GL_TXN_INC',NULL,0,'Double(22,6)',NULL),
+(29,'LT_GL_TXN_INC',NULL,0,'Double(22,6)',NULL),
+(30,'ST_GL_DIST_INC',NULL,0,'Double(22,6)',NULL),
+(31,'LT_GL_DIST_INC',NULL,0,'Double(22,6)',NULL),
+(32,'ORD_INC',NULL,0,'Double(22,6)',NULL),
+(33,'QUALFD_DVD_INC',NULL,0,'Double(22,6)','Qualified Dividend Income'),
+(34,'NQUALFD_DVD_INC',NULL,0,'Double(22,6)','Non-Qualified Dividend Income'),
+(35,'TOT_UNREALIZED_GL',NULL,0,'Double(22,6)','Total Unrealized Gain Loss'),
+(36,'TOT_CONTRIB_AMT',NULL,0,'Double(22,6)','Total Contribution Amount'),
+(37,'TOT_WTHDRWL_AMT',NULL,0,'Double(22,6)','Total Withdrawal Amount'),
+(38,'FEES',NULL,0,'Double(22,6)','Fees'),
+(39,'TOT_CLIENT_WTHDRS_GRS',NULL,0,'Double(22,6)','Total Gross Client Withdrawal Gross Amount'),
+(40,'TOT_CLIENT_WTHDRS_NET',NULL,0,'Double(22,6)','Total Net Client Withdrawal Net Amount'),
+(41,'TOT_FLWS_GRS',NULL,0,'Double(22,6)','Total Gross Cash Flow'),
+(42,'TOT_FLWS_NET',NULL,0,'Double(22,6)','Total Net Cash Flow'),
+(43,'WTD_FLWS_GRS',NULL,0,'Double(22,6)',NULL),
+(44,'WTD_FLWS_NET',NULL,0,'Double(22,6)',NULL),
+(45,'ACCT_INCEPT_DT',NULL,0,'Date','Account Inception Date'),
+(46,'ACCT_LONG_NAME',NULL,0,'Varchar(200)','Account Long Name'),
+(47,'ACCT_FIRST_REV_DT',NULL,0,'Date','Account First Revised Date'),
+(48,'ACCT_LAST_REV_DT',NULL,0,'Date','Account Last Revised Date'),
+(49,'ACCT_MON_BEG_URGL_PCT',NULL,0,'Double(18,18)','Account URGL Month Begin %'),
+(50,'ACCT_MON_END_URGL_PCT',NULL,0,'Double(18,18)','Account URGL Month End %'),
+(51,'ACCT_GAINS_RATIO_GRS',NULL,0,'Double(18,18)','Account Gains Ratio - Gross'),
+(52,'ACCT_GAINS_RATIO_NET',NULL,0,'Double(18,18)','Account Gains Ratio - Net'),
+(53,'ACCT_CFA_WOTAX_GRS',NULL,0,'Double(18,18)','Account Cash Flow Adj W/Out Tax Gross'),
+(54,'ACCT_CFA_WOTAX_NET',NULL,0,'Double(18,18)','Account Cash Flow Adj W/Out Tax Net'),
+(55,'ACCT_PTAX_RTN_GRS',NULL,0,'Double(23,16)','Account Pre-Tax Return Gross'),
+(56,'ACCT_PTAX_RTN_NET',NULL,0,'Double(23,16)','Account Pre-Tax Return Net'),
+(57,'ACCT_TAX_LIAB',NULL,0,'Double(18,18)','Account Tax Liability'),
+(58,'ACCT_ATAX_RTN_GRS',NULL,0,'Double(18,18)','Account After Tax Return Gross'),
+(59,'ACCT_ATAX_RTN_NET',NULL,0,'Double(18,18)','Account After Tax Return Net'),
+(60,'ACCT_ATAX_RTN_WCFA_GRS',NULL,0,'Double(18,18)','Account After Tax Return W/Cash Flow Adj Gross'),
+(61,'ACCT_ATAX_RTN_WCFA_NET',NULL,0,'Double(18,18)','Account After Tax Return W/Cash Flow Adj Net'),
+(62,'TRGT_URGL_MON_BEG_PCT',NULL,0,'Double(18,18)','Target URGL Month Begin Pct'),
+(63,'TRGT_PTAX_RTN_GRS',NULL,0,'Double(22,16)','Target Pre-Tax Return Gross'),
+(64,'TRGT_PTAX_RTN_NET',NULL,0,'Double(22,16)','Target Pre-Tax Return Net'),
+(65,'TRGT_TAX_LIAB',NULL,0,'Double(18,18)','Target Tax Liability'),
+(66,'TRGT_ATAX_RTN_GRS',NULL,0,'Double(18,18)','Target After Tax Return Gross'),
+(67,'TRGT_ATAX_RTN_NET',NULL,0,'Double(18 decimals)','Target After Tax Return Net'),
+(68,'TRGT_ATAX_RTN_WCFA_GRS',NULL,0,'Double(18 decimals)','Target After Tax Return W/Cash Flow Adj Gross'),
+(69,'TRGT_ATAX_RTN_WCFA_NET',NULL,0,'Double(18 decimals)','Target After Tax Return W/Cash Flow Adj Net'),
+(70,'TRGT_URGL_ADJT_WOTAX',NULL,0,'Double(18 decimals)','Target Unrealized Adj W/Out Tax'),
+(71,'TRGT_ATAX_RTN_URGLA_GRS',NULL,0,'Double(18 decimals)','Target After Tax Return URGLA Gross'),
+(72,'TRGT_ATAX_RTN_URGLA_NET',NULL,0,'Double(18 decimals)','Target After Tax Return URGLA Net'),
+(73,'TRGT_ATAX_RTN_WCFA_URGLA_GRS',NULL,0,'Double(18 decimals)','Target After Tax Return W/ Cash Flow Adj URGLA Gross'),
+(74,'TRGT_ATAX_RTN_WCFA_URGLA_NET',NULL,0,'Double(18 decimals)','Target After Tax Return W/ Cash Flow Adj URGLA Net'),
+(75,'BMK_URGL_MON_BEG_PCT',NULL,0,'Double(18 decimals)','Benchmark URGL Month Begin %'),
+(76,'BMK_PTAX_RTN_GRS',NULL,0,'Double(22,16)','Benchmark Pre-Tax Return Gross'),
+(77,'BMK_TAX_LIAB',NULL,0,'Double(18 decimals)','Benchmark Tax Liability'),
+(78,'BMK_ATAX_RTN_GRS',NULL,0,'Double(18 decimals)','Benchmark After Tax Return Gross'),
+(79,'BMK_URGL_ADJT_WOTAX',NULL,0,'Double(18 decimals)','Benchmark URLGA W/Out Tax'),
+(80,'BMK_ATAX_RTN_URGLA_GRS',NULL,0,'Double(18 decimals)','Benchmark After Tax Return URGLA Gross'),
+(81,'BMK_ATAX_RTN_WCFA_URGLA_GRS',NULL,0,'Double(18 decimals)','Benchmark After Tax Return W/ Cash Flow Adj URGLA Gross'),
+(82,'STANDARD_RTN_MON_YR',NULL,0,'Date','Standard Benchmark Return Month/Year'),
+(83,'STANDARD_BMK_CD',NULL,0,'Varchar(20)','Standard Benchmark Code'),
+(84,'STANDARD_1M_RET',NULL,0,'Double(22,6)','Standard Bmk 1 Month Cumulative Return'),
+(85,'STANDARD_3M_RET',NULL,0,'Double(22,6)','Standard Bmk 3 Month Cumulative Return'),
+(86,'STANDARD_6M_RET',NULL,0,'Double(22,6)','Standard Bmk 6 Month Cumulative return'),
+(87,'STANDARD_9M_RET',NULL,0,'Double(22,6)','Standard Bmk 9 Month Cumulative return'),
+(88,'STANDARD_1Y_RET',NULL,0,'Double(22,6)','Standard Bmk 1 Year Cumulative Return'),
+(89,'STANDARD_YTD_RET',NULL,0,'Double(22,6)','Standard  Ytd Cumulative Return'),
+(90,'STANDARD_3Y_RET',NULL,0,'Double(22,6)','Standard Bmk 3 Year Cumulative Return'),
+(91,'STANDARD_3Y_ANN_RET',NULL,0,'Double(22,6)','Standard Bmk 3 Year Annualized Return'),
+(92,'STANDARD_5Y_RET',NULL,0,'Double(22,6)','Standard Bmk 5 Year Cumulative Return'),
+(93,'STANDARD_5Y_ANN_RET',NULL,0,'Double(22,6)','Standard Bmk 5 Year Annualized Return'),
+(94,'STANDARD_10Y_RET',NULL,0,'Double(22,6)','Standard Bmk 10 Year Cumulative Return'),
+(95,'STANDARD_10Y_ANN_RET',NULL,0,'Double(22,6)','Standard Bmk 10 Year Annualized Return'),
+(96,'STANDARD_LOF_RET',NULL,0,'Double(22,6)','Standard Bmk LOF Cumulative return'),
+(97,'STANDARD_LOF_ANN_RET',NULL,0,'Double(22,6)','Standard Bmk LOF Annualized Return'),
+(98,'EXTENDED_BMK_CD',NULL,0,'Varchar(20)','Extended Benchmark Code'),
+(99,'EXTENDED_1M_RET',NULL,0,'Double(22,6)','Extended Bmk 1 Month Cumulative Return'),
+(100,'EXTENDED_3M_RET',NULL,0,'Double(22,6)','Extended Bmk 3 Month Cumulative Return'),
+(101,'EXTENDED_6M_RET',NULL,0,'Double(22,6)','Extended Bmk 6 Month Cumulative Return'),
+(102,'EXTENDED_9M_RET',NULL,0,'Double(22,6)','Extended Bmk 9 Month Cumulative Return'),
+(103,'EXTENDED_1Y_RET',NULL,0,'Double(22,6)','Extended Bmk 1 Year Cumulative Return'),
+(104,'EXTENDED_YTD_RET',NULL,0,'Double(22,6)','Extended Bmk Ytd Cumulative Return'),
+(105,'EXTENDED_3Y_RET',NULL,0,'Double(22,6)','Extended Bmk 3 Year Cumulative Return'),
+(106,'EXTENDED_3Y_ANN_RET',NULL,0,'Double(22,6)','Extended Bmk 3 Year Annualized Return'),
+(107,'EXTENDED_5Y_RET',NULL,0,'Double(22,6)','Extended Bmk 5 Year Cumulative Return'),
+(108,'EXTENDED_5Y_ANN_RET',NULL,0,'Double(22,6)','Extended Bmk 5 Year Annualized Return'),
+(109,'EXTENDED_10Y_RET',NULL,0,'Double(22,6)','Extended Bmk 10 Year Cumulative Return'),
+(110,'EXTENDED_10Y_ANN_RET',NULL,0,'Double(22,6)','Extended Bmk 10 Year Annualized Return'),
+(111,'EXTENDED_LOF_RET',NULL,0,'Double(22,6)','Extended Bmk LOF Cumulative Return'),
+(112,'EXTENDED_LOF_ANN_RET',NULL,0,'Double(22,6)','Extended Bmk LOF Annualized Return');
+/*!40000 ALTER TABLE `APF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `BAS_Key` WRITE;
+/*!40000 ALTER TABLE `BAS_Key` DISABLE KEYS */;
+INSERT INTO `BAS_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_beg',NULL,1,'int','Year (CCYY) (begin date)'),
+(3,'mnth_beg',NULL,1,'int','Month (1-12) (begin date)'),
+(4,'day_beg',NULL,1,'int','Day (1-31) (begin date)'),
+(5,'type',NULL,1,'char(5)','Type of: VOL: Voluntary expense cap; SED: Contractual expense cap subject to expiration date; SBA: Contractual expense cap subject to board approval; SSA: Contractual expense cap subject to shareholder approval'),
+(6,'value',NULL,0,'float(40)',NULL),
+(7,'year_end',NULL,0,'int','Year (CCYY) (end date)'),
+(8,'mnth_end',NULL,0,'int','Month (1-12) (end date)'),
+(9,'day_end',NULL,0,'int','Day (1-31) (end date)');
+/*!40000 ALTER TABLE `BAS_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `BMR_Key` WRITE;
+/*!40000 ALTER TABLE `BMR_Key` DISABLE KEYS */;
+INSERT INTO `BMR_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'rl_abbr',NULL,1,'char(10)','Reason or purpose of the relationship'),
+(3,'rl_fund_id',NULL,1,'char(5)','Fund ID for the associated entity (i.e. index, peer group,composite,etc.)'),
+(4,'beg_date',NULL,1,'date(10)','Date when relationship became effective'),
+(5,'end_date',NULL,0,'date(10)','Date when relationship ends'),
+(6,'title',NULL,0,'char(25)','A short form of the description for a fund to fund relationship'),
+(7,'filler',NULL,0,'float(10)',NULL)
+/*!40000 ALTER TABLE `BMR_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+LOCK TABLES `BPP_Key` WRITE;
+/*!40000 ALTER TABLE `BPP_Key` DISABLE KEYS */;
+INSERT INTO `BPP_Key` VALUES 
+(1,'shr_fee_id',NULL,1,'int','Values: 1 = Charitable Gift Fund, 8 = Standard Fidelity Sales Charge, 9 = Advisor Schedule, 11 = CDSC schedule'),
+(2,'shr_fee_type',NULL,1,'char(5)','Values: SALES: Sales schedule; REDMP: Redemption schedule'),
+(3,'seq_num',NULL,1,'int','Which breakpoint in the range'),
+(4,'min_amount',NULL,0,'float(40)','This value defines the low end of the range.'),
+(5,'sales_max_amount',NULL,0,'float(40)','This value defines the high end of the range when shr_fee_type = SALES'),
+(6,'paym_pct',NULL,0,'float(40)','Dealer payment'),
+(7,'shr_fee',NULL,0,'float(40)','The breakpoint pricing fee'),
+(8,'redmp_max_amount',NULL,0,'???','This value defines the high end of the range when shr_fee_type = REDMP')
+/*!40000 ALTER TABLE `BPP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+LOCK TABLES `CPF_Key` WRITE;
+/*!40000 ALTER TABLE `CPF_Key` DISABLE KEYS */;
+INSERT INTO `CPF_Key` VALUES 
+(1,'COMP_CD',NULL,1,'Varchar(20)','Composite Code'),
+(2,'RPT_M_DATE',NULL,1,'Varchar(6)','Reporting Month'),
+(3,'COMP_NAME',NULL,0,'Varchar(200)','Composite Name'),
+(4,'COMP_ACCT_MARKET_VALUE',NULL,0,'Double(22,16)','Composite Account Market Value'),
+(5,'COMP_ACCT_AW_PTAX_RTN_GRS',NULL,0,'Double(22,16)','Composite Account Asset Wtd Pre-Tax Return Gross'),
+(6,'COMP_ACCT_AW_PTAX_RTN_NET',NULL,0,'Double(22,16)','Composite Account Asset Wtd Pre-Tax Return Net'),
+(7,'COMP_ACCT_AW_ATAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Account Asset Wtd After Tax Return Gross'),
+(8,'COMP_ACCT_AW_ATAX_WA_RTN_NET',NULL,0,'Double(22,16)','Composite Account Asset Wtd After Tax Return Net'),
+(9,'COMP_ACCT_AW_ATAX_RTN_WCFA_GRS',NULL,0,'Double(22,16)','Composite Account Asset Wtd After Tax Return W/Cash Flow Adj Gross'),
+(10,'COMP_ACCT_AW_ATAX_RTN_WCFA_NET',NULL,0,'Double(22,16)','Composite Account Asset Wtd After Tax Return W/Cash Flow Adj Net'),
+(11,'COMP_TRGT_AW_PTAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Target Asset Wtd Pre-Tax Return Gross'),
+(12,'COMP_TRGT_AW_ATAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Target Asset Wtd After Tax Return Gross'),
+(13,'COMP_TGT_AW_AT_WA_RTN_WCFA_GRS',NULL,0,'Double(22,16)','Composite Target Asset Wtd After Tax Return W/Cash Flow Adj Gross'),
+(14,'COMP_TGT_AW_AT_RTN_WCFA_GRS_GL',NULL,0,'Double(22,16)','Composite Target Asset Wtd After Tax Return W/Cash Flow Adj Gross Gain Loss'),
+(15,'COMP_TRGT_AW_WA_URGLA_FACTOR',NULL,0,'Double(22,16)','Composite Target Asset Wtd Weighted Average URGLA Factor'),
+(16,'COMP_BMK_AW_PTAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Benchmark Asset Wtd Weighted Average Pre-Tax Return Gross'),
+(17,'COMP_BMK_AW_ATAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Benchmark Asset Wtd Weighted Average After Tax Return Gross'),
+(18,'COMP_BMK_AW_ATAX_WA_RTN_GRS_GL',NULL,0,'Double(22,16)','Composite Benchmark Asset Wtd Weighted Average After Tax Return Gross Gain Loss'),
+(19,'COMP_BMK_AW_WA_URGLA_FACTOR',NULL,0,'Double(22,16)','Composite Benchmark Asset Wtd Weighted Average URGLA Factor'),
+(20,'COMP_ACCT_PTAX_RTN_GRS',NULL,0,'Double(22,16)','Composite Account Log Wtd Pre-Tax Return Gross'),
+(21,'COMP_ACCT_PTAX_RTN_NET',NULL,0,'Double(22,16)','Composite Account Asset Wtd Pre-Tax Return Net'),
+(22,'COMP_ACCT_ATAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Account Log Wtd After Tax Return Gross'),
+(23,'COMP_ACCT_ATAX_WA_RTN_NET',NULL,0,'Double(22,16)','Composite Account Log Wtd After Tax Return Net'),
+(24,'COMP_ACCT_ATAX_RTN_WCFA_GRS',NULL,0,'Double(22,16)','Composite Account Log Wtd After Tax Return W/Cash Flow Adj Gross'),
+(25,'COMP_ACCT_ATAX_RTN_WCFA_NET',NULL,0,'Double(22,16)','Composite Account Log Wtd After Tax 26Return W/Cash Flow Adj Net'),
+(26,'COMP_TRGT_PTAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Target Log Wtd Pre-Tax Return Gross'),
+(27,'COMP_TRGT_ATAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Target Log Wtd After Tax Return Gross'),
+(28,'COMP_TRGT_ATAX_WA_RTN_WCFA_GRS',NULL,0,'Double(22,16)','Composite Target Log Wtd After Tax Return W/Cash Flow Adj Gross'),
+(29,'COMP_TRGT_ATAX_RTN_WCFA_GRS_GL',NULL,0,'Double(22,16)','Composite Target Log Wtd After Tax Return W/Cash Flow Adj Gross Gain Loss'),
+(30,'COMP_TRGT_WA_URGLA_FACTOR',NULL,0,'Double(22,16)','Composite Target Log Wtd Weighted Average URGLA Factor'),
+(31,'COMP_BMK_PTAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Benchmark Log Wtd Weighted Average Pre-Tax Return Gross'),
+(32,'COMP_BMK_ATAX_WA_RTN_GRS',NULL,0,'Double(22,16)','Composite Benchmark Log Wtd Weighted Average After Tax Return Gross'),
+(33,'COMP_BMK_ATAX_WA_RTN_GRS_GL',NULL,0,'Double(22,16)','Composite Benchmark Log Wtd Weighted Average After Tax Return Gross Gain Loss'),
+(34,'COMP_BMK_WA_URGLA_FACTOR',NULL,0,'Double(22,16)','Composite Benchmark Log Wtd Weighted Average URGLA Factor')
+
+/*!40000 ALTER TABLE `CPF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+LOCK TABLES `CRF_Key` WRITE;
+/*!40000 ALTER TABLE `CRF_Key` DISABLE KEYS */;
+INSERT INTO `CRF_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'as400_id',NULL,1,'char(5)','Identifier from as400 trading system'),
+(3,'multiclass_ind',NULL,1,'char(1)','Identifies whether fund is of a mutli-class structure. If multiclass = Y, then populate otherwise populate with NULL'),
+(4,'class_type',NULL,0,'char(2)','Identifies the code associated to a particular class. (Examples: 1, 2, 3, 4, A, B, C, D, E, F, G, I, K, L, M, N)'),
+(5,'portfio_name',NULL,0,'Varchar(95)','Portfolio level name'),
+(6,'class_cop_date',NULL,0,'date(10)','Class commencement of operations date - the date on which the financial instrument became available to be traded. Always populated; use class_cop_date from classes table, else cop_date from funds table based on fund_id');
+/*!40000 ALTER TABLE `CRF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `CSP_Key` WRITE;
+/*!40000 ALTER TABLE `CSP_Key` DISABLE KEYS */;
+INSERT INTO `CSP_Key` VALUES 
+(1,'COMP_CD',NULL,1,'Varchar(20)','Composite Code'),
+(2,'RPT_M_DATE',NULL,1,'Varchar(6)','Reporting Month'),
+(3,'COMP_NAME',NULL,0,'Varchar(200)','Composite Name'),
+(4,'COMP_INCEPTION_DT',NULL,0,'Date','Composite Inception Date'),
+(5,'COMP_SDA_BMK_DT',NULL,0,'Date','Composite Since Benchmark Data Available Date'),
+(6,'COMP_ACCT_MARKET_VALUE',NULL,0,'Double(22,16)','Composite account market value'),
+(7,'COMP_AW_CUM_GR_PT_3M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 month pre tax gross'),
+(8,'BMK_AW_CUM_GR_PT_3M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 month pre tax gross'),
+(9,'EXCESS_AW_CUM_GR_PT_3M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 month pre tax gross'),
+(10,'COMP_AW_CUM_GR_AT_3M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 month after tax gross'),
+(11,'BMK_AW_CUM_GR_AT_3M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 month after tax gross'),
+(12,'EXCESS_AW_CUM_GR_AT_3M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 month after-tax gross'),
+(13,'COMP_AW_CUM_GR_AT_CFA_3M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 month after tax with CFA gross'),
+(14,'BMK_AW_CUM_GR_AT_UGL_3M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 month after tax with unrealized gain loss gross'),
+(15,'EXCESS_AW_CUM_GR_AT_UGL_3M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 month after tax with unrealized gain loss gross'),
+(16,'BMK_AW_UGL_FCTR_CUM_3M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 month unrealized gain loss factor'),
+(17,'COMP_AW_CUM_GR_PT_6M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 6 month pre tax gross'),
+(18,'BMK_AW_CUM_GR_PT_6M',NULL,0,'Double(22,16)','Benchmark cumulative 6 month pre tax gross'),
+(19,'EXCESS_AW_CUM_GR_PT_6M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 6 month pre tax gross'),
+(20,'COMP_AW_CUM_GR_AT_6M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 6 month after tax gross'),
+(21,'BMK_AW_CUM_GR_AT_6M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 6 month after tax gross'),
+(22,'EXCESS_AW_CUM_GR_AT_6M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 6 month after-tax gross'),
+(23,'COMP_AW_CUM_GR_AT_CFA_6M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 6 month after tax with CFA gross'),
+(24,'BMK_AW_CUM_GR_AT_UGL_6M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 6 month after tax with unrealized gain loss gross'),
+(25,'EXCESS_AW_CUM_GR_AT_UGL_6M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 6 month after tax with unrealized gain loss gross'),
+(26,'BMK_AW_UGL_FCTR_CUM_6M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 6 month unrealized gain loss factor'),
+(27,'COMP_AW_CUM_GR_PT_9M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 9 month pre tax gross'),
+(28,'BMK_AW_CUM_GR_PT_9M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 9 month pre tax gross'),
+(29,'EXCESS_AW_CUM_GR_PT_9M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 9 month pre tax gross'),
+(30,'COMP_AW_CUM_GR_AT_9M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 9 month after tax gross'),
+(31,'BMK_AW_CUM_GR_AT_9M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 9 month after tax gross'),
+(32,'EXCESS_AW_CUM_GR_AT_9M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 9 month after-tax gross'),
+(33,'COMP_AW_CUM_GR_AT_CFA_9M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 9 month after tax with CFA gross'),
+(34,'BMK_AW_CUM_GR_AT_UGL_9M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 9 month after tax with unrealized gain loss gross'),
+(35,'EXCESS_AW_CUM_GR_AT_UGL_9M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 9 month after tax with unrealized gain loss gross'),
+(36,'BMK_AW_UGL_FCTR_CUM_9M',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 9 month unrealized gain loss factor'),
+(37,'COMP_AW_CUM_GR_PT_1Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 1 year pre tax gross'),
+(38,'BMK_AW_CUM_GR_PT_1Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 1 year pre tax gross'),
+(39,'EXCESS_AW_CUM_GR_PT_1Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 1 year pre tax gross'),
+(40,'COMP_AW_CUM_GR_AT_1Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 1 year after tax gross'),
+(41,'BMK_AW_CUM_GR_AT_1Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 1 year after tax gross'),
+(42,'EXCESS_AW_CUM_GR_AT_1Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 1 year after-tax gross'),
+(43,'COMP_AW_CUM_GR_AT_CFA_1Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 1 year after tax with CFA gross'),
+(44,'BMK_AW_CUM_GR_AT_UGL_1Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 1 year after tax with unrealized gain loss gross'),
+(45,'EXCESS_AW_CUM_GR_AT_UGL_1Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 1 year after tax with unrealized gain loss gross'),
+(46,'BMK_AW_UGL_FCTR_CUM_1Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 1 year unrealized gain loss factor'),
+(47,'COMP_AW_CUM_GR_PT_YTD',NULL,0,'Double(22,16)','Composite asset weighted cumulative year to date pre tax gross'),
+(48,'BMK_AW_CUM_GR_PT_YTD',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative year to date pre tax gross'),
+(49,'EXCESS_AW_CUM_GR_PT_YTD',NULL,0,'Double(22,16)','Excess asset weighted cumulative year to date pre tax gross'),
+(50,'COMP_AW_CUM_GR_AT_YTD',NULL,0,'Double(22,16)','Composite asset weighted cumulative year to date after tax gross'),
+(51,'BMK_AW_CUM_GR_AT_YTD',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative year to date after tax gross'),
+(52,'EXCESS_AW_CUM_GR_AT_YTD',NULL,0,'Double(22,16)','Excess asset weighted cumulative year to date after-tax gross'),
+(53,'COMP_AW_CUM_GR_AT_CFA_YTD',NULL,0,'Double(22,16)','Composite asset weighted cumulative year to date after tax with CFA gross'),
+(54,'BMK_AW_CUM_GR_AT_UGL_YTD',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative year to date after tax with unrealized gain loss gross'),
+(55,'EXCESS_AW_CUM_GR_AT_UGL_YTD',NULL,0,'Double(22,16)','Excess asset weighted cumulative year to date after tax with unrealized gain loss gross'),
+(56,'BMK_AW_UGL_FCTR_CUM_YTD',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative year to date unrealized gain loss factor'),
+(57,'COMP_AW_CUM_GR_PT_3Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 year pre tax gross'),
+(58,'BMK_AW_CUM_GR_PT_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 year pre tax gross'),
+(59,'EXCESS_AW_CUM_GR_PT_3Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 year pre tax gross'),
+(60,'COMP_AW_CUM_GR_AT_3Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 year after tax gross'),
+(61,'BMK_AW_CUM_GR_AT_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 year after tax gross'),
+(62,'EXCESS_AW_CUM_GR_AT_3Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 year after-tax gross'),
+(63,'COMP_AW_CUM_GR_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 year after tax with CFA gross'),
+(64,'BMK_AW_CUM_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 year after tax with unrealized gain loss gross'),
+(65,'EXCESS_AW_CUM_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 year after tax with unrealized gain loss gross'),
+(66,'BMK_AW_UGL_FCTR_CUM_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 3 year unrealized gain loss factor'),
+(67,'COMP_AW_ANN_GR_PT_3Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 3 year pre tax gross'),
+(68,'BMK_AW_ANN_GR_PT_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 3 year pre tax gross'),
+(69,'EXCESS_AW_ANN_GR_PT_3Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 3 year pre tax gross'),
+(70,'COMP_AW_ANN_GR_AT_3Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 3 year after tax gross'),
+(71,'BMK_AW_ANN_GR_AT_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 3 year after tax gross'),
+(72,'EXCESS_AW_ANN_GR_AT_3Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 3 year after-tax gross'),
+(73,'COMP_AW_ANN_GR_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 3 year after tax with CFA gross'),
+(74,'BMK_AW_ANN_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 3 year after tax with unrealized gain loss gross'),
+(75,'EXCESS_AW_ANN_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 3 year after tax with unrealized gain loss gross'),
+(76,'BMK_AW_UGL_FCTR_ANN_3Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 3 year unrealized gain loss factor'),
+(77,'COMP_AW_CUM_GR_PT_5Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 5 year pre tax gross'),
+(78,'BMK_AW_CUM_GR_PT_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 5 year pre tax gross'),
+(79,'EXCESS_AW_CUM_GR_PT_5Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 5 year pre tax gross'),
+(80,'COMP_AW_CUM_GR_AT_5Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 5 year after tax gross'),
+(81,'BMK_AW_CUM_GR_AT_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 5 year after tax gross'),
+(82,'EXCESS_AW_CUM_GR_AT_5Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 5 year after-tax gross'),
+(83,'COMP_AW_CUM_GR_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 5 year after tax with CFA gross'),
+(84,'BMK_AW_CUM_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 5 year after tax with unrealized gain loss gross'),
+(85,'EXCESS_AW_CUM_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 5 year after tax with unrealized gain loss gross'),
+(86,'BMK_AW_UGL_FCTR_CUM_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 5 year unrealized gain loss factor'),
+(87,'COMP_AW_ANN_GR_PT_5Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 5 year pre tax gross'),
+(88,'BMK_AW_ANN_GR_PT_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 5 year pre tax gross'),
+(89,'EXCESS_AW_ANN_GR_PT_5Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 5 year pre tax gross'),
+(90,'COMP_AW_ANN_GR_AT_5Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 5 year after tax gross'),
+(91,'BMK_AW_ANN_GR_AT_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 5 year after tax gross'),
+(92,'EXCESS_AW_ANN_GR_AT_5Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 5 year after-tax gross'),
+(93,'COMP_AW_ANN_GR_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 5 year after tax with CFA gross'),
+(94,'BMK_AW_ANN_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 5 year after tax with unrealized gain loss gross'),
+(95,'EXCESS_AW_ANN_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 5 year after tax with unrealized gain loss gross'),
+(96,'BMK_AW_UGL_FCTR_ANN_5Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 5 year unrealized gain loss factor'),
+(97,'COMP_AW_CUM_GR_PT_10Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 10 year pre tax gross'),
+(98,'BMK_AW_CUM_GR_PT_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 10 year pre tax gross'),
+(99,'EXCESS_AW_CUM_GR_PT_10Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 10 year pre tax gross'),
+(100,'COMP_AW_CUM_GR_AT_10Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 10 year after tax gross'),
+(101,'BMK_AW_CUM_GR_AT_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 10 year after tax gross'),
+(102,'EXCESS_AW_CUM_GR_AT_10Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 10 year after-tax gross'),
+(103,'COMP_AW_CUM_GR_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 10 year after tax with CFA gross'),
+(104,'BMK_AW_CUM_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 10 year after tax with unrealized gain loss gross'),
+(105,'EXCESS_AW_CUM_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 10 year after tax with unrealized gain loss gross'),
+(106,'BMK_AW_UGL_FCTR_CUM_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative 10 year unrealized gain loss factor'),
+(107,'COMP_AW_ANN_GR_PT_10Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 10 year pre tax gross'),
+(108,'BMK_AW_ANN_GR_PT_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 10 year pre tax gross'),
+(109,'EXCESS_AW_ANN_GR_PT_10Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 10 year pre tax gross'),
+(110,'COMP_AW_ANN_GR_AT_10Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 10 year after tax gross'),
+(111,'BMK_AW_ANN_GR_AT_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 10 year after tax gross'),
+(112,'EXCESS_AW_ANN_GR_AT_10Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 10 year after-tax gross'),
+(113,'COMP_AW_ANN_GR_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 10 year after tax with CFA gross'),
+(114,'BMK_AW_ANN_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 10 year after tax with unrealized gain loss gross'),
+(115,'EXCESS_AW_ANN_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 10 year after tax with unrealized gain loss gross'),
+(116,'BMK_AW_UGL_FCTR_ANN_10Y',NULL,0,'Double(22,16)','Benchmark asset weighted annualized 10 year unrealized gain loss factor'),
+(117,'COMP_AW_CUM_GR_PT_SDA',NULL,0,'Double(22,16)','Composite asset weighted cumulative since data available  pre tax gross'),
+(118,'BMK_AW_CUM_GR_PT_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since data available pre tax gross'),
+(119,'EXCESS_AW_CUM_GR_PT_SDA',NULL,0,'Double(22,16)','Excess asset weighted cumulative since data available pre tax gross'),
+(120,'COMP_AW_CUM_GR_AT_SDA',NULL,0,'Double(22,16)','Composite asset weighted cumulative since data available after tax gross'),
+(121,'BMK_AW_CUM_GR_AT_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since data available after tax gross'),
+(122,'EXCESS_AW_CUM_GR_AT_SDA',NULL,0,'Double(22,16)','Excess asset weighted cumulative since data available after-tax gross'),
+(123,'COMP_AW_CUM_GR_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite asset weighted cumulative since data available after tax with CFA gross'),
+(124,'BMK_AW_CUM_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since data available after tax with unrealized gain loss gross'),
+(125,'EXCESS_AW_CUM_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess asset weighted cumulative since data available after tax with unrealized gain loss gross'),
+(126,'BMK_AW_UGL_FCTR_CUM_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since data available unrealized gain loss factor'),
+(127,'COMP_AW_ANN_GR_PT_SDA',NULL,0,'Double(22,16)','Composite asset weighted annualized since data available pre tax gross'),
+(128,'BMK_AW_ANN_GR_PT_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since data available pre tax gross'),
+(129,'EXCESS_AW_ANN_GR_PT_SDA',NULL,0,'Double(22,16)','Excess asset weighted annualized since data available pre tax gross'),
+(130,'COMP_AW_ANN_GR_AT_SDA',NULL,0,'Double(22,16)','Composite asset weighted annualized since data available after tax gross'),
+(131,'BMK_AW_ANN_GR_AT_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since data available after tax gross'),
+(132,'EXCESS_AW_ANN_GR_AT_SDA',NULL,0,'Double(22,16)','Excess asset weighted annualized since data available after-tax gross'),
+(133,'COMP_AW_ANN_GR_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite asset weighted annualized since data available after tax with CFA gross'),
+(134,'BMK_AW_ANN_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since data available after tax with unrealized gain loss gross'),
+(135,'EXCESS_AW_ANN_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess asset weighted annualized since data available after tax with unrealized gain loss gross'),
+(136,'BMK_AW_UGL_FCTR_ANN_SDA',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since data available unrealized gain loss factor'),
+(137,'COMP_AW_CUM_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted cumulative since benchmark data available  pre tax gross'),
+(138,'BMK_AW_CUM_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since benchmark data available pre tax gross'),
+(139,'EXCESS_AW_CUM_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted cumulative since benchmark data available pre tax gross'),
+(140,'COMP_AW_CUM_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted cumulative since benchmark data available after tax gross'),
+(141,'BMK_AW_CUM_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since benchmark data available after tax gross'),
+(142,'EXCESS_AW_CUM_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted cumulative since benchmark data available after-tax gross'),
+(143,'COMP_AW_CUM_GR_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted cumulative since benchmark data available after tax with CFA gross'),
+(144,'BMK_AW_CUM_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since benchmark data available after tax with unrealized gain loss gross'),
+(145,'EXCES_AW_CUM_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted cumulative since benchmark data available after tax with unrealized gain loss gross'),
+(146,'BMK_AW_UGL_FCTR_CUM_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative since benchmark data available unrealized gain loss factor'),
+(147,'COMP_AW_ANN_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted annualized since benchmark data available pre tax gross'),
+(148,'BMK_AW_ANN_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since benchmark data available pre tax gross'),
+(149,'EXCESS_AW_ANN_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted annualized since benchmark data available pre tax gross'),
+(150,'COMP_AW_ANN_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted annualized since benchmark data available after tax gross'),
+(151,'BMK_AW_ANN_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since benchmark data available after tax gross'),
+(152,'EXCESS_AW_ANN_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted annualized since benchmark data available after-tax gross'),
+(153,'COMP_AW_ANN_GR_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted annualized since benchmark data available after tax with CFA gross'),
+(154,'BMK_AW_ANN_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since benchmark data available after tax with unrealized gain loss gross'),
+(155,'EXCES_AW_ANN_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted annualized since benchmark data available after tax with unrealized gain loss gross'),
+(156,'BMK_AW_UGL_FCTR_ANN_SDA_BMK',NULL,0,'Double(22,16)','Benchmark asset weighted annualized since benchmark data available unrealized gain loss factor'),
+(157,'PRIOR_1Y_COMP_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year pre tax gross'),
+(158,'PRIOR_1Y_BMK_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 1 (calendar) year pre tax gross'),
+(159,'PRIOR_1Y_EXCESS_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 1 (calendar) year pre tax gross'),
+(160,'PRIOR_1Y_COMP_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year after tax gross'),
+(161,'PRIOR_1Y_BMK_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 1 (calendar) year after tax gross'),
+(162,'PRIOR_1Y_EXCESS_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 1 (calendar) year after tax gross'),
+(163,'PRIOR_1Y_CMP_AW_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year after tax with CFA gross'),
+(164,'PRIOR_1Y_BMK_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 1 (calendar) year after tax with unrealized gain loss gross'),
+(165,'PRIOR_1Y_EX_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 1 (calendar) year after tax with unrealized gain loss gross'),
+(166,'PRIOR_1Y_BMK_AW_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior 1 (calendar) year unrealized gain loss factor'),
+(167,'PRIOR_2Y_COMP_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year pre tax gross'),
+(168,'PRIOR_2Y_BMK_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 2 (calendar) year pre tax gross'),
+(169,'PRIOR_2Y_EXCESS_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 2 (calendar) year pre tax gross'),
+(170,'PRIOR_2Y_COMP_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 2 (calendar) year after tax gross'),
+(171,'PRIOR_2Y_BMK_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 2 (calendar) year after tax gross'),
+(172,'PRIOR_2Y_EXECSS_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 2 (calendar) year after tax gross'),
+(173,'PRIOR_2Y_CMP_AW_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 2 (calendar) year after tax with CFA gross'),
+(174,'PRIOR_2Y_BMK_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 2 (calendar) year after tax with unrealized gain loss gross'),
+(175,'PRIOR_2Y_EX_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 2 (calendar) year after tax with unrealized gain loss gross'),
+(176,'PRIOR_2Y_BMK_AW_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior 2 (calendar) year unrealized gain loss factor'),
+(177,'PRIOR_3Y_COMP_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 3 (calendar) year pre tax gross'),
+(178,'PRIOR_3Y_BMK_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 3 (calendar) year pre tax gross'),
+(179,'PRIOR_3Y_EXCESS_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 3 (calendar) year pre tax gross'),
+(180,'PRIOR_3Y_COMP_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 3 (calendar) year after tax gross'),
+(181,'PRIOR_3Y_BMK_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 3 (calendar) year after tax gross'),
+(182,'PRIOR_3Y_EXCESS_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 3 (calendar) year after tax gross'),
+(183,'PRIOR_3Y_CMP_AW_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 3 (calendar) year after tax with unrealized gain loss gross'),
+(184,'PRIOR_3Y_BMK_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 3 (calendar) year after tax with unrealized gain loss gross'),
+(185,'PRIOR_3Y_EX_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 3 (calendar) year after tax with unrealized gain loss gross'),
+(186,'PRIOR_3Y_BMK_AW_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior 3 (calendar) year unrealized gain loss factor'),
+(187,'PRIOR_4Y_COMP_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 4 (calendar) year pre tax gross'),
+(188,'PRIOR_4Y_BMK_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 4 (calendar) year pre tax gross'),
+(189,'PRIOR_4Y_EXCESS_AW_CUM_GR_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 4 (calendar) year pre tax gross'),
+(190,'PRIOR_4Y_COMP_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 4 (calendar) year after tax gross'),
+(191,'PRIOR_4Y_BMK_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 4 (calendar) year after tax gross'),
+(192,'PRIOR_4Y_EXCESS_AW_CUM_GR_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 4 (calendar) year after tax gross'),
+(193,'PRIOR_4Y_CMP_AW_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 4 (calendar) year after tax with CFA gross'),
+(194,'PRIOR_4Y_BMK_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 4 (calendar) year after tax with unrealized gain loss gross'),
+(195,'PRIOR_4Y_EX_AW_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 4 (calendar) year after tax with unrealized gain loss gross'),
+(196,'PRIOR_4Y_BMK_AW_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior 4 (calendar) year unrealized gain loss factor'),
+(197,'COMP_AW_CUM_NET_PT_3M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 month pre tax net'),
+(198,'EXCESS_AW_CUM_NET_PT_3M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 month pre tax net'),
+(199,'COMP_AW_CUM_NET_AT_3M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 month after tax net'),
+(200,'EXCESS_AW_CUM_NET_AT_3M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 month after-tax net'),
+(201,'COMP_AW_CUM_NET_AT_CFA_3M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 month after tax with CFA net'),
+(202,'EXCESS_AW_CUM_NET_AT_UGL_3M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 month after tax with unrealized gain loss net'),
+(203,'COMP_AW_CUM_NET_PT_6M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 6 month pre tax net'),
+(204,'EXCESS_AW_CUM_NET_PT_6M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 6 month pre tax net'),
+(205,'COMP_AW_CUM_NET_AT_6M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 6 month after tax gross'),
+(206,'EXCESS_AW_CUM_NET_AT_6M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 6 month after-tax net'),
+(207,'COMP_AW_CUM_NET_AT_CFA_6M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 6 month after tax with CFA net'),
+(208,'EXCESS_AW_CUM_NET_AT_UGL_6M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 6 month after tax with unrealized gain loss net'),
+(209,'COMP_AW_CUM_NET_PT_9M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 9 month pre tax net'),
+(210,'EXCESS_AW_CUM_NET_PT_9M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 9 month pre tax net'),
+(211,'COMP_AW_CUM_NET_AT_9M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 9 month after tax gross'),
+(212,'EXCESS_AW_CUM_NET_AT_9M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 9 month after-tax net'),
+(213,'COMP_AW_CUM_NET_AT_CFA_9M',NULL,0,'Double(22,16)','Composite asset weighted cumulative 9 month after tax with CFA net'),
+(214,'EXCESS_AW_CUM_NET_AT_UGL_9M',NULL,0,'Double(22,16)','Excess asset weighted cumulative 9 month after tax with unrealized gain loss net'),
+(215,'COMP_AW_CUM_NET_PT_1Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 1 year pre tax net'),
+(216,'EXCESS_AW_CUM_NET_PT_1Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 1 year pre tax net'),
+(217,'COMP_AW_CUM_NET_AT_1Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 1 year after tax net'),
+(218,'EXCESS_AW_CUM_NET_AT_1Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 1 year after-tax net'),
+(219,'COMP_AW_CUM_NET_AT_CFA_1Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 1 year after tax with CFA net'),
+(220,'EXCESS_AW_CUM_NET_AT_UGL_1Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 1 year after tax with unrealized gain loss net'),
+(221,'COMP_AW_CUM_NET_PT_YTD',NULL,0,'Double(22,16)','Composite asset weighted cumulative year to date pre tax net'),
+(222,'EXCESS_AW_CUM_NET_PT_YTD',NULL,0,'Double(22,16)','Excess asset weighted cumulative year to date pre tax net'),
+(223,'COMP_AW_CUM_NET_AT_YTD',NULL,0,'Double(22,16)','Composite asset weighted cumulative year to date after tax net'),
+(224,'EXCESS_AW_CUM_NET_AT_YTD',NULL,0,'Double(22,16)','Excess asset weighted cumulative year to date after-tax net'),
+(225,'COMP_AW_CUM_NET_AT_CFA_YTD',NULL,0,'Double(22,16)','Composite asset weighted cumulative year to date after tax with CFA net'),
+(226,'EXCESS_AW_CUM_NET_AT_UGL_YTD',NULL,0,'Double(22,16)','Excess asset weighted cumulative year to date after tax with unrealized gain loss net'),
+(227,'COMP_AW_CUM_NET_PT_3Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 year pre tax net'),
+(228,'EXCESS_AW_CUM_NET_PT_3Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 year pre tax net'),
+(229,'COMP_AW_CUM_NET_AT_3Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 year after tax net'),
+(230,'EXCESS_AW_CUM_NET_AT_3Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 year after-tax net'),
+(231,'COMP_AW_CUM_NET_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 3 year after tax with CFA net'),
+(232,'EXCESS_AW_CUM_NET_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 3 year after tax with unrealized gain loss net'),
+(233,'COMP_AW_ANN_NET_PT_3Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 3 year pre tax net'),
+(234,'EXCESS_AW_ANN_NET_PT_3Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 3 year pre tax net'),
+(235,'COMP_AW_ANN_NET_AT_3Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 3 year after tax net'),
+(236,'EXCESS_AW_ANN_NET_AT_3Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 3 year after-tax net'),
+(237,'COMP_AW_ANN_NET_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 3 year after tax with CFA net'),
+(238,'EXCESS_AW_ANN_NET_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 3 year after tax with unrealized gain loss net'),
+(239,'COMP_AW_CUM_NET_PT_5Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 5 year pre tax net'),
+(240,'EXCESS_AW_CUM_NET_PT_5Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 5 year pre tax net'),
+(241,'COMP_AW_CUM_NET_AT_5Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 5 year after tax net'),
+(242,'EXCESS_AW_CUM_NET_AT_5Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 5 year after-tax net'),
+(243,'COMP_AW_CUM_NET_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 5 year after tax with CFA net'),
+(244,'EXCESS_AW_CUM_NET_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 5 year after tax with unrealized gain loss net'),
+(245,'COMP_AW_ANN_NET_PT_5Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 5 year pre tax net'),
+(246,'EXCESS_AW_ANN_NET_PT_5Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 5 year pre tax net'),
+(247,'COMP_AW_ANN_NET_AT_5Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 5 year after tax net'),
+(248,'EXCESS_AW_ANN_NET_AT_5Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 5 year after-tax net'),
+(249,'COMP_AW_ANN_NET_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 5 year after tax with CFA net'),
+(250,'EXCESS_AW_ANN_NET_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 5 year after tax with unrealized gain loss net'),
+(251,'COMP_AW_CUM_NET_PT_10Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 10 year pre tax net'),
+(252,'EXCESS_AW_CUM_NET_PT_10Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 10 year pre tax net'),
+(253,'COMP_AW_CUM_NET_AT_10Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 10 year after tax net'),
+(254,'EXCESS_AW_CUM_NET_AT_10Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 10 year after-tax net'),
+(255,'COMP_AW_CUM_NET_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite asset weighted cumulative 10 year after tax with CFA net'),
+(256,'EXCESS_AW_CUM_NET_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess asset weighted cumulative 10 year after tax with unrealized gain loss net'),
+(257,'COMP_AW_ANN_NET_PT_10Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 10 year pre tax net'),
+(258,'EXCESS_AW_ANN_NET_PT_10Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 10 year pre tax net'),
+(259,'COMP_AW_ANN_NET_AT_10Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 10 year after tax net'),
+(260,'EXCESS_AW_ANN_NET_AT_10Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 10 year after-tax net'),
+(261,'COMP_AW_ANN_NET_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite asset weighted annualized 10 year after tax with CFA net'),
+(262,'EXCESS_AW_ANN_NET_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess asset weighted annualized 10 year after tax with unrealized gain loss net'),
+(263,'COMP_AW_CUM_NET_PT_SDA',NULL,0,'Double(22,16)','Composite asset weighted cumulative since data available  pre tax net'),
+(264,'EXCESS_AW_CUM_NET_PT_SDA',NULL,0,'Double(22,16)','Excess asset weighted cumulative since data available pre tax net'),
+(265,'COMP_AW_CUM_NET_AT_SDA',NULL,0,'Double(22,16)','Composite asset weighted cumulative since data available after tax net'),
+(266,'EXCESS_AW_CUM_NET_AT_SDA',NULL,0,'Double(22,16)','Excess asset weighted cumulative since data available after-tax net'),
+(267,'COMP_AW_CUM_NET_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite asset weighted cumulative since data available after tax with CFA net'),
+(268,'EXCESS_AW_CUM_NET_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess asset weighted cumulative since data available after tax with unrealized gain loss net'),
+(269,'COMP_AW_ANN_NET_PT_SDA',NULL,0,'Double(22,16)','Composite asset weighted annualized since data available pre tax net'),
+(270,'EXCESS_AW_ANN_NET_PT_SDA',NULL,0,'Double(22,16)','Excess asset weighted annualized since data available pre tax net'),
+(271,'COMP_AW_ANN_NET_AT_SDA',NULL,0,'Double(22,16)','Composite asset weighted annualized since data available after tax net'),
+(272,'EXCESS_AW_ANN_NET_AT_SDA',NULL,0,'Double(22,16)','Excess asset weighted annualized since data available after-tax gross'),
+(273,'COMP_AW_ANN_NET_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite asset weighted annualized since data available after tax with CFA net'),
+(274,'EXCESS_AW_ANN_NET_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess asset weighted annualized since data available after tax with unrealized gain loss net'),
+(275,'COMP_AW_CUM_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted cumulative since benchmark data available  pre tax net'),
+(276,'EXCESS_AW_CUM_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted cumulative since benchmark data available pre tax net'),
+(277,'COMP_AW_CUM_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted cumulative since benchmark data available after tax net'),
+(278,'EXCESS_AW_CUM_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted cumulative since benchmark data available after-tax net'),
+(279,'COMP_AW_CUM_NET_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted cumulative since benchmark data available after tax with CFA net'),
+(280,'EXCS_AW_CUM_NET_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted cumulative since benchmark data available after tax with unrealized gain loss net'),
+(281,'COMP_AW_ANN_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted annualized since benchmark data available pre tax net'),
+(282,'EXCESS_AW_ANN_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted annualized since benchmark data available pre tax net'),
+(283,'COMP_AW_ANN_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted annualized since benchmark data available after tax net'),
+(284,'EXCESS_AW_ANN_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted annualized since benchmark data available after-tax net'),
+(285,'COMP_AW_ANN_NET_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite asset weighted annualized since benchmark data available after tax with CFA net'),
+(286,'EXCS_AW_ANN_NET_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess asset weighted annualized since benchmark data available after tax with unrealized gain loss net'),
+(287,'PRIOR_1Y_COMP_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year pre tax net'),
+(288,'PRIOR_1_EXCESS _AW_CUM_NT_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 1 (calendar) year pre tax net'),
+(289,'PRIOR_1Y_COMP_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year after tax net'),
+(290,'PRIOR_1Y_EXCESS_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 1 (calendar) year after tax net'),
+(291,'PRIOR_1Y_CMP_AW_CUM_NT_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 1 (calendar) year after tax with CFA net'),
+(292,'PRIOR_1Y_EX_AW_CUM_NT_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 1 (calendar) year after tax with CFA net'),
+(293,'PRIOR_2Y_COMP_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 2 (calendar) year pre tax net'),
+(294,'PRIOR_2Y_EXCESS_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 2 (calendar) year pre tax net'),
+(295,'PRIOR_2Y_COMP_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 2 (calendar) year after tax net'),
+(296,'PRIOR_2Y_EXCESS_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 2 (calendar) year after tax net'),
+(297,'PRIOR_2Y_CMP_AW_CUM_NT_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 2 (calendar) year after tax with CFA net'),
+(298,'PRIOR_2Y_EX_AW_CUM_NT_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 2 (calendar) year after tax with CFA net'),
+(299,'PRIOR_3Y_COMP_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 3 (calendar) year pre tax net'),
+(300,'PRIOR_3Y_EXCESS_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 3 (calendar) year pre tax net'),
+(301,'PRIOR_3Y_COMP_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 3 (calendar) year after tax net'),
+(302,'PRIOR_3Y_EXCESS_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 3 (calendar) year after tax net'),
+(303,'PRIOR_3Y_CMP_AW_CUM_NT_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 3 (calendar) year after tax with CFA net'),
+(304,'PRIOR_3Y_EX_AW_CUM_NT_AT_UGL',NULL,0,'Double(22,16)','Benchmark asset weighted cumulative prior year 3 (calendar) year after tax with unrealized gain loss net'),
+(305,'PRIOR_4Y_COMP_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 4 (calendar) year pre tax net'),
+(306,'PRIOR_4Y_EXCESS_AW_CUM_NT_PT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 4 (calendar) year pre tax net'),
+(307,'PRIOR_4Y_COMP_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 4 (calendar) year after tax net'),
+(308,'PRIOR_4Y_EXCESS_AW_CUM_NT_AT',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 4 (calendar) year after tax net'),
+(309,'PRIOR_4Y_CMP_AW_CUM_NT_AT_CFA',NULL,0,'Double(22,16)','Composite asset weighted cumulative prior year 4 (calendar) year after tax with CFA net'),
+(310,'PRIOR_4Y_EX_AW_CUM_NT_AT_UGL',NULL,0,'Double(22,16)','Excess asset weighted cumulative prior year 4 (calendar) year after tax with unrealized gain loss net');
+
+/*!40000 ALTER TABLE `CSP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `DBT_Key` WRITE;
+/*!40000 ALTER TABLE `DBT_Key` DISABLE KEYS */;
+INSERT INTO `DBT_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'day_d',NULL,1,'int','Day (1-31)'),
+(5,'dist_ind',NULL,1,'char(4)','Distribution indicator: DIV – Dividend, LCG – Long-term Capital Gain,MTD – Month-To-Date Milrate, SCG – Short-term Capital Gain, TCG – Total Capital Gain'),
+(6,'dist',NULL,0,'float(40)','The amount of the distribution/share'),
+(7,'x_price',NULL,0,'float(40)','X Div Price - the price of a dividend on ex-date.'),
+(8,'dist_ytd',NULL,0,'float(40)','The sum of current distribution from the previous year end date.'),
+(9,'record_date',NULL,0,'date(10)','Record date –  The record date for the distribution.  This is the date upon which a security owner must be recorded on the books of the issuer or fund as having owned the security to receive future dividends and/or interest distributions.  This date is set by the corporate Board of Directors'),
+(10,'reinvest_date',NULL,0,'date(10)','Ex date - the day the Board of Directors of a fund declares the amount of the distribution and deducts that amount from the fund’s net asset value.'),
+(11,'pay_date',NULL,0,'date(10)','Pay date - the day on which the distribution is made to the shareholders.');
+/*!40000 ALTER TABLE `DBT_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `DCL_Key` WRITE;
+/*!40000 ALTER TABLE `DCL_Key` DISABLE KEYS */;
+INSERT INTO `DCL_Key` VALUES 
+(1,'disclosure_id',NULL,1,'char(5)','Disclosure ID'),
+(2,'seq_num',NULL,1,'int','Footnote number'),
+(3,'disclosure',NULL,0,'varchar(255)','Text containing the disclosure footnote.'),
+(4,'filler',NULL,0,'char(10)',NULL);
+/*!40000 ALTER TABLE `DCL_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `DNA_Key` WRITE;
+/*!40000 ALTER TABLE `DNA_Key` DISABLE KEYS */;
+INSERT INTO `DNA_Key` VALUES 
+(2,'mutl_fund_id',NULL,1,'char(10)','Shareholder Accounting System identifier'),
+(3,'tmst_d',NULL,1,'date(10)','Date a NAV was updated'),
+(4,'year_d',NULL,1,'int','Year (CCYY)'),
+(5,'mnth_d',NULL,1,'int','Month (1-12)'),
+(6,'day_d',NULL,1,'int','Day (1-31)'),
+(7,'col_name',NULL,1,'char(32)','Which data file column in NAV file was updated'),
+(8,'orig_value',NULL,0,'float(40)','Original value'),
+(9,'repl_val',NULL,0,'float(40)','New value');
+/*!40000 ALTER TABLE `DNA_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `DPF_Key` WRITE;
+/*!40000 ALTER TABLE `DPF_Key` DISABLE KEYS */;
+INSERT INTO `DPF_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day - DD'),
+(5,'price',NULL,0,'float, no rounding','Daily price for the fund'),
+(6,'nav_ind',NULL,0,'varchar(4)','Price indicator: DLY - Daily, COP - Commencement of Operations'),
+(7,'diff_price',NULL,0,'float, no rounding','Price Change in Dollars'),
+(8,'pct_price',NULL,0,'float, no rounding','Price Change in Percent');
+/*!40000 ALTER TABLE `DPF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `DPI_Key` WRITE;
+/*!40000 ALTER TABLE `DPI_Key` DISABLE KEYS */;
+INSERT INTO `DPI_Key` VALUES 
+(1,'fund_id',NULL,1,'char(5)','The Performance System Fund Identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day - DD'),
+(5,'price',NULL,0,'float, no rounding','Daily price for the index'),
+(6,'nav_ind',NULL,0,'char(4)','Price indicator: DLY – Daily, PLIM – Preliminary'),
+(7,'diff_price',NULL,0,'float, no rounding','Price Change in Dollars'),
+(8,'pct_price',NULL,0,'float, no rounding','Price Change in Percent');
+/*!40000 ALTER TABLE `DPI_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `DPP_Key` WRITE;
+/*!40000 ALTER TABLE `DPP_Key` DISABLE KEYS */;
+INSERT INTO `DPP_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year – YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month – MM'),
+(4,'plan_schedule',NULL,1,'varchar(2)','Destiny Plan Schedule ID on which performance is based'),
+(5,'plan_duration',NULL,1,'int','Destiny Plan Duration (in years) on which performance is based'),
+(6,'cum_ytd',NULL,0,'float, 2','Cumulative YTD return'),
+(7,'cum_1m',NULL,0,'float, 2','Cumulative 1 month return'),
+(8,'cum_3m',NULL,0,'float, 2','Cumulative 3 month return'),
+(9,'cum_6m',NULL,0,'float, 2','Cumulative 6 month return'),
+(10,'cum_1y',NULL,0,'float, 2','Cumulative 1 year return'),
+(11,'cum_2y',NULL,0,'float, 2','Cumulative 2 year return (NO DATA)'),
+(12,'cum_3y',NULL,0,'float, 2','Cumulative 3 year return'),
+(13,'cum_5y',NULL,0,'float, 2','Cumulative 5 year return'),
+(14,'cum_10y',NULL,0,'float, 2','Cumulative 10 year return'),
+(15,'cum_15y',NULL,0,'float, 2','Cumulative 15 year return'),
+(16,'cum_lop',NULL,0,'float, 2','Cumulative life of plan (note this is different from lof) (NO DATA)'),
+(17,'aa_1y',NULL,0,'float, 2','Average Annual 1 year return'),
+(18,'aa_2y',NULL,0,'float, 2','Average Annual 2 year return (NO DATA)'),
+(19,'aa_3y',NULL,0,'float, 2','Average Annual 3 year return'),
+(20,'aa_5y',NULL,0,'float, 2','Average Annual 5 year return'),
+(21,'aa_10y',NULL,0,'float, 2','Average Annual 10 year return'),
+(22,'aa_15y',NULL,0,'float, 2','Average Annual 15 year return'),
+(23,'aa_lop',NULL,0,'float, 2','Average Annual life of plan (note this is different from lof) (NO DATA)');
+/*!40000 ALTER TABLE `DPP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `DRK_Key` WRITE;
+/*!40000 ALTER TABLE `DRK_Key` DISABLE KEYS */;
+INSERT INTO `DRK_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'relationship_id',NULL,1,'char(10)','Reason or purpose of the relationship (i.e. SEC/GEN)'),
+(3,'rl_fund_id',NULL,1,'char(5)','Fund ID for the associated entity (i.e. index, peer group, composite, etc.)'),
+(4,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(5,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(6,'period_type',NULL,1,'char(3)','Period for the risk measures: 3Y, 5Y, 10Y, LOF'),
+(7,'alpha',NULL,0,'float, 2','Alpha'),
+(8,'ann_alpha',NULL,0,'float, 2','Annualized Alpha'),
+(9,'beta',NULL,0,'float, 2','Beta'),
+(10,'r_squared',NULL,0,'float, 2','Coefficient of Determination (r²)'),
+(11,'rel_volatility',NULL,0,'float, 2','Relative Volatility'),
+(12,'ann_tracking_error',NULL,0,'float, 2','Annualized Tracking Error'),
+(13,'treynor',NULL,0,'float, 2','Treynor'),
+(14,'down_volatility',NULL,0,'float, 2','Downside Volatility Ratio'),
+(15,'info_ratio',NULL,0,'float, 2','Informatio Ratio'),
+(16,'m_squared',NULL,0,'float, 2','M-Squared'),
+(17,'sortino_ratio',NULL,0,'float, 2','Sortino Ratio'),
+(18,'corr_coeff',NULL,0,'float, 2','Correlation Co-Efficient');
+/*!40000 ALTER TABLE `DRK_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+LOCK TABLES `DSA_Key` WRITE;
+/*!40000 ALTER TABLE `DSA_Key` DISABLE KEYS */;
+INSERT INTO `DSA_Key` VALUES 
+(1,'acct_num',NULL,1,'CHAR (20)','Account Number'),
+(2,'std_rtn_dt',NULL,1,'CHAR (8)','Standard Return Date'),
+(3,'acct_name',NULL,0,'CHAR (80)','Account Name'),
+(4,'inception_date',NULL,0,'CHAR(8)','Account Inception Date'),
+(5,'model_cd',NULL,0,'CHAR (20)','Model Code'),
+(6,'d_pre_tax_rtn_grs',NULL,0,'FLOAT (16)','Model 1 Day Pre-Tax Return Gross'),
+(7,'d_pre_tax_rtn_net',NULL,0,'FLOAT (16)','Model 1 Day Pre-Tax Return Net'),
+(8,'wtd_pre_tax_rtn_grs',NULL,0,'FLOAT (16)','Model WTD Pre-Tax Return Gross'),
+(9,'wtd_pre_tax_rtn_net',NULL,0,'FLOAT (16)','Model WTD Pre-Tax Return Net'),
+(10,'mtd_pre_tax_rtn_grs',NULL,0,'FLOAT (16)','Model MTD Pre-Tax Return Gross'),
+(11,'mtd_pre_tax_rtn_net',NULL,0,'FLOAT (16)','Model MTD Pre-Tax Return Net'),
+(12,'qtd_pre_tax_rtn_grs',NULL,0,'FLOAT (16)','Model QTD Pre-Tax Return Gross'),
+(13,'qtd_pre_tax_rtn_net',NULL,0,'FLOAT (16)','Model QTD Pre-Tax Return Net'),
+(14,'ytd_pre_tax_rtn_grs',NULL,0,'FLOAT (16)','Model YTD Pre-Tax Return Gross'),
+(15,'ytd_pre_tax_rtn_net',NULL,0,'FLOAT (16)','Model YTD Pre-Tax Return Net');
+/*!40000 ALTER TABLE `DSA_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `BMR_Key` WRITE;
+/*!40000 ALTER TABLE `BMR_Key` DISABLE KEYS */;
+INSERT INTO `BMR_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'type',NULL,1,'char(5)','Type of description.'),
+(3,'display_seq',NULL,1,'int','Sequence number for text blocks.'),
+(4,'text',NULL,0,'shar(255)','Text blocks; a line of text greater than 255 characters is split into multiple records, potentially splitting words.  The seq_n is used to maintain the ordering of records so that the text can be reassembled.; If type_c = RI, the text describes the possibility of losing or not gaining value.  Risk is differentiated from uncertainty, which is not measurable.; If type_c = ST, the text describes the types of investments a fund will pursue in an effort to meet its overall objective.If type_c = AN, the text describes the fund’s performance.; If type_c = OB, the text describes the basic investment objective of a fund.');
+/*!40000 ALTER TABLE `ATP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+LOCK TABLES `DUV_Key` WRITE;
+/*!40000 ALTER TABLE `DUV_Key` DISABLE KEYS */;
+INSERT INTO `DUV_Key` VALUES 
+(1,'accdiv_c',NULL,1,'varchar(5)','Account Division Code'),
+(2,'year_d',NULL,0,'varchar(4)','Year - YYYY'),
+(3,'mnth_d',NULL,0,'varchar(2)','Month - MM'),
+(4,'day_d',NULL,0,'varchar(2)','Day - DD'),
+(5,'sub_account',NULL,0,'varchar(95)','Sub Account Name'),
+(6,'annuity_id',NULL,0,'varchar(4)','Annuity Identifier'),
+(7,'trad_symb',NULL,0,'varchar(5) or NULL','Trade Symbol'),
+(8,'unit_value',NULL,0,'float','Unit Value');
+/*!40000 ALTER TABLE `DUV_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `DYD_Key` WRITE;
+/*!40000 ALTER TABLE `DYD_Key` DISABLE KEYS */;
+INSERT INTO `DYD_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (as CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (used in conjunction with year_d),1=Jan, 2=Feb, ... 12=Dec'),
+(4,'day_d',NULL,1,'int','Day of the month (used in conjunction with year_d and mnth_d). Valid range 1->31'),
+(5,'avg_mat_day_a',NULL,0,'float(40)','Average Maturity in days.'),
+(6,'filler',NULL,0,'float(40)',NULL),
+(7,'filler',NULL,0,'date(10)',NULL),
+(8,'filler',NULL,0,'float(40)',NULL),
+(9,'filler',NULL,0,'float(40)',NULL),
+(10,'offr_prc_a',NULL,0,'float(40)','Offer price.'),
+(11,'filler',NULL,0,'float(40)',NULL),
+(12,'filler',NULL,0,'float(40)',NULL),
+(13,'filler',NULL,0,'float(40)',NULL),
+(14,'filler',NULL,0,'float(40)',NULL),
+(15,'filler',NULL,0,'float(40)',NULL),
+(16,'filler',NULL,0,'float(40)',NULL),
+(17,'filler',NULL,0,'float(40)',NULL),
+(18,'filler',NULL,0,'float(40)',NULL),
+(19,'filler',NULL,0,'float(40)',NULL),
+(20,'filler',NULL,0,'int',NULL),
+(21,'filler',NULL,0,'float(40)',NULL),
+(22,'yield_7d',NULL,0,'float(40)','Money Market Seven Day Yield'),
+(23,'filler',NULL,0,'float(40)',NULL),
+(24,'yield_30d_sec',NULL,0,'float(40)','SEC Thirty Day Yield'),
+(25,'yield_cmp_eff',NULL,0,'float(40)','Compound effective Yield');
+/*!40000 ALTER TABLE `DYD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `ETF_Key` WRITE;
+/*!40000 ALTER TABLE `ETF_Key` DISABLE KEYS */;
+INSERT INTO `ETF_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day - DD'),
+(5,'period_type',NULL,1,'varchar(3)','DLY, QTD, Q1, Q2, Q3, Q4'),
+(6,'period start_date',NULL,0,'char(10)','MM/DD/YYYY'),
+(7,'period end_date',NULL,0,'char(10)','MM/DD/YYYY'),
+(8,'premium discount',NULL,0,'float,3','Premium discount value. This field is populated for DLY period only for the date in fields (2-4). This field is blank for periods other than DLY.'),
+(9,'total days #',NULL,0,'int','Total # of days in period'),
+(10,'total # days above',NULL,0,'int','Number of days within period with closing price above or equal NAV'),
+(11,'total # days below',NULL,0,'int','Number of days within period with closing price below  NAV'),
+(12,'total %  days above',NULL,0,'float, 2','Percentage of days within period with closing price above or equal NAV'),
+(13,'total %  days below',NULL,0,'float, 2','Number of days within period with closing price below  NAV'),
+(14,'# days in above 0-24',NULL,0,'int','Number of days within period with closing price above or equal NAV, basis point differential 0-24'),
+(15,'# days in below 0-24',NULL,0,'int','Number of days within period with closing price below NAV, basis point differential 0-24'),
+(16,'# days in above 25-49',NULL,0,'int','Number of days within period with closing price above or equal NAV, basis point differential 25-49'),
+(17,'# days in below 25-49',NULL,0,'int','Number of days within period with closing price below NAV, basis point differential 25-49'),
+(18,'# days in above 50-74',NULL,0,'int','Number of days within period with closing price above or equal NAV, basis point differential 50-74'),
+(19,'# days in below 50-74',NULL,0,'int','Number of days within period with closing price below NAV, basis point differential 50-74'),
+(20,'# days in above 75-100',NULL,0,'int','Number of days within period with closing price above or equal NAV, basis point differential 75-100'),
+(21,'# days in below 75-100',NULL,0,'int','Number of days within period with closing price below NAV, basis point differential 75-100'),
+(22,'# days in above 100+',NULL,0,'int','Number of days within period with closing price above or equal NAV, basis point differential 100+'),
+(23,'# days in below 100+',NULL,0,'int','Number of days within period with closing price below NAV, basis point differential 100+'),
+(24,'% days in above 0-24',NULL,0,'float, 2','Percentage of days within period with closing price above or equal NAV, basis point differential 0-24'),
+(25,'% days in below 0-24',NULL,0,'float, 2','Percentage of days within period with closing price below NAV, basis point differential 0-24'),
+(26,'% days in above 25-49',NULL,0,'float, 2','Percentage of days within period with closing price above or equal NAV, basis point differential 25-49'),
+(27,'% days in below 25-49',NULL,0,'float, 2','Percentage of days within period with closing price below NAV, basis point differential 25-49'),
+(28,'% days in above 50-74',NULL,0,'float, 2','Percentage of days within period with closing price above or equal NAV, basis point differential 50-74'),
+(29,'% days in below 50-74',NULL,0,'float, 2','Percentage of days within period with closing price below NAV, basis point differential 50-74'),
+(30,'% days in above 75-100',NULL,0,'float, 2','Percentage of days within period with closing price above or equal NAV, basis point differential 75-100'),
+(31,'% days in below 75-100',NULL,0,'float, 2','Percentage of days within period with closing price below NAV, basis point differential 75-100'),
+(32,'% days in above 100+',NULL,0,'float, 2','Percentage of days within period with closing price above or equal NAV, basis point differential 100+'),
+(33,'% days in below 100+',NULL,0,'float, 2','Percentage of days within period with closing price below NAV, basis point differential 100+');
+/*!40000 ALTER TABLE `ETF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `EXP_Key` WRITE;
+/*!40000 ALTER TABLE `EXP_Key` DISABLE KEYS */;
+INSERT INTO `EXP_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'filler',NULL,0,'float(40)',NULL),
+(5,'filler',NULL,0,'float(40)',NULL),
+(6,'filler',NULL,0,'float(40)',NULL),
+(7,'filler',NULL,0,'float(40)',NULL),
+(8,'turn_over_pct',NULL,0,'float(40)','Turn over rate percentage');
+/*!40000 ALTER TABLE `EXP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `FEE_Key` WRITE;
+/*!40000 ALTER TABLE `FEE_Key` DISABLE KEYS */;
+INSERT INTO `FEE_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'fee_type',NULL,1,'varchar(10)','Fee type (currently limited to CDSC)'),
+(3,'apply_date (derived)',NULL,1,'int','Year for which fee applies'),
+(4,'fee',NULL,0,'float, 2','Fee amount');
+/*!40000 ALTER TABLE `FEE_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `FTR_Key` WRITE;
+/*!40000 ALTER TABLE `FTR_Key` DISABLE KEYS */;
+INSERT INTO `FTR_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'feature_id',NULL,1,'char(5)','Feature ID (Descriptions can be found in the fts file)'),
+(3,'feature_value',NULL,0,'char(255)','Current feature value');
+
+/*!40000 ALTER TABLE `FTR_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `FTS_Key` WRITE;
+/*!40000 ALTER TABLE `FTS_Key` DISABLE KEYS */;
+INSERT INTO `FTS_Key` VALUES 
+(1,'feature_id',NULL,1,'char(5)','Feature ID'),
+(2,'name',NULL,0,'char(255)','Name of feature'),
+(3,'data_type',NULL,0,'char(15)','Data type code; this enables the data to be interpreted correctly. Values:Yes/No-Value is yes or no,Number-Value is numeric floating point,Text-Value is a string up to 255 characters, Date-Value is a date as MM/DD/YY'),
+(4,'default_name',NULL,0,'char(255)','Default value'),
+(5,'max_data_len_v',NULL,0,'int','Maximum length for data type TEXT');
+/*!40000 ALTER TABLE `FTS_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `HTS_Key` WRITE;
+/*!40000 ALTER TABLE `HTS_Key` DISABLE KEYS */;
+INSERT INTO `HTS_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'event_type',NULL,1,'char(5)','Type of fund activity. Values: 2-Name change, 3-Merger, 5-Other, 9-Fund closed to new accounts'),
+(3,'strt_year_d',NULL,1,'int','Year of the date on which the fund started (CCYY)'),
+(4,'strt_mnth_d',NULL,1,'int','Month of the date on which the fund started (1-12)'),
+(5,'strt_day_d',NULL,1,'int','Day on which the fund started (1-31)'),
+(6,'end_year_d',NULL,0,'int','Year of the date on which the fund ended (CCYY)'),
+(7,'end_mnth_d',NULL,0,'int','Month of the date on which the fund ended (1-12)'),
+(8,'end_day_d',NULL,0,'int','Day on which the fund ended (1-31)'),
+(9,'event',NULL,0,'char(255)','Fund history; free form text providing information regarding miscellaneous historical activities.');
+/*!40000 ALTER TABLE `HTS_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `HYM_Key` WRITE;
+/*!40000 ALTER TABLE `HYM_Key` DISABLE KEYS */;
+INSERT INTO `HYM_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'Date',NULL,1,'int','Fund Inception date or month end date. Format: mm/dd/yyyy'),
+(3,'tent_m',NULL,0,'float, 2','$10,000 Hypothetical');
+
+/*!40000 ALTER TABLE `HYM_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `HYP_Key` WRITE;
+/*!40000 ALTER TABLE `HYP_Key` DISABLE KEYS */;
+INSERT INTO `HYP_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Performance System Internal Fund Identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'tent_1y_a',NULL,0,'float, 2','$10,000 Hypothetical starting last business day of 11 years ago, to last business day of previous year'),
+(4,'tent_2y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 2 years'),
+(5,'tent_3y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 3 years'),
+(6,'tent_4y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 4 years'),
+(7,'tent_5y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 5 years'),
+(8,'tent_6y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 6 years'),
+(9,'tent_7y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 7 years'),
+(10,'tent_8y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 8 years'),
+(11,'tent_9y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 9 years'),
+(12,'tent_10y_a',NULL,0,'float, 2','$10,000 Hypothetical, 12/31 of this year less 10 years'),
+(13,'tent_mtd_a',NULL,0,'float, 2','$10,000 Hypothetical, this month less 1 month');
+/*!40000 ALTER TABLE `HYP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `IBK_Key` WRITE;
+/*!40000 ALTER TABLE `IBK_Key` DISABLE KEYS */;
+INSERT INTO `IBK_Key` VALUES 
+(1,'fund_id',NULL,1,'char(5)','Identifer from Performance System'),
+(2,'year_d',NULL,1,'char(4)','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'char(2)','Month (1-12)'),
+(4,'period_type',NULL,1,'char(3)','Period for the risk measures: 3Y, 5Y, 10Y, LOF'),
+(5,'std_dev',NULL,0,'float(2)','Standard Deviation'),
+(6,'ann_std_dev',NULL,0,'float(2)','Annualized Standard Deviation'),
+(7,'ret_per_unit_risk',NULL,0,'float(2)','Return Per Unit of Risk'),
+(8,'sharpe',NULL,0,'float(2)','Sharpe’s ratio');
+
+/*!40000 ALTER TABLE `IBK_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `ICL_Key` WRITE;
+/*!40000 ALTER TABLE `ICL_Key` DISABLE KEYS */;
+INSERT INTO `ICL_Key` VALUES 
+(1,'fund_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','year - YYYY (modified for FFIPS)'),
+(3,'mnth_d',NULL,1,'char(2)','month - MM (modified for FFIPS)'),
+(4,'price',NULL,0,'float, 2','Market Indicator Closing Values - The closing value of the base index used by a financial instrument');
+/*!40000 ALTER TABLE `ICL_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `IDX_Key` WRITE;
+/*!40000 ALTER TABLE `IDX_Key` DISABLE KEYS */;
+INSERT INTO `IDX_Key` VALUES 
+(1,'fund_id',NULL,1,'char(5)','Benchmark ID'),
+(2,'name',NULL,0,'char(30)','Benchmark short name'),
+(3,'valuation_point',NULL,0,'char(5)','Time of day when the exchange rate is valued. The time is British Standard Time.'),
+(4,'curr_id',NULL,0,'char(3)','Base currency of index'),
+(5,'legal_name',NULL,0,'varchar(95)','Performance System long/legal name'),
+(6,'track_date',NULL,0,'smalldatetime(10)','Start date for performance tracking'),
+(7,'end_date',NULL,0,'smalldatetime(10)','End date of performance tracking (if applicable)');
+/*!40000 ALTER TABLE `IDX_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `IPF_Key` WRITE;
+/*!40000 ALTER TABLE `IPF_Key` DISABLE KEYS */;
+INSERT INTO `IPF_Key` VALUES 
+(1,'fund_id',NULL,1,'char(5)','The Performance System Fund Identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'cum_ytd',NULL,0,'float, 2','Cumulative YTD return'),
+(5,'cum_1m',NULL,0,'float, 2','Cumulative 1 month return'),
+(6,'cum_3m',NULL,0,'float, 2','Cumulative 3 month return'),
+(7,'cum_6m',NULL,0,'float, 2','Cumulative 6 month return'),
+(8,'cum_9m',NULL,0,'float, 2','Cumulative 9 month return'),
+(9,'cum_1y',NULL,0,'float, 2','Cumulative 1 year return'),
+(10,'cum_2y',NULL,0,'float, 2','Cumulative 2 year return'),
+(11,'cum_3y',NULL,0,'float, 2','Cumulative 3 year return'),
+(12,'cum_4y',NULL,0,'float, 2','Cumulative 4 year return'),
+(13,'cum_5y',NULL,0,'float, 2','Cumulative 5 year return'),
+(14,'cum_6y',NULL,0,'float, 2','Cumulative 6 year return'),
+(15,'cum_7y',NULL,0,'float, 2','Cumulative 7 year return'),
+(16,'cum_8y',NULL,0,'float, 2','Cumulative 8 year return'),
+(17,'cum_9y',NULL,0,'float, 2','Cumulative 9 year return'),
+(18,'cum_10y',NULL,0,'float, 2','Cumulative 10 year return'),
+(19,'cum_lof',NULL,0,'float, 2','Cumulative life of fund return'),
+(20,'aa_1y',NULL,0,'float, 2','Average Annual 1 year return'),
+(21,'aa_2y',NULL,0,'float, 2','Average Annual 2 year return'),
+(22,'aa_3y',NULL,0,'float, 2','Average Annual 3 year return'),
+(23,'aa_4y',NULL,0,'float, 2','Average Annual 4 year return'),
+(24,'aa_5y',NULL,0,'float, 2','Average Annual 5 year return'),
+(25,'aa_6y',NULL,0,'float, 2','Average Annual 6 year return'),
+(26,'aa_7y',NULL,0,'float, 2','Average Annual 7 year return'),
+(27,'aa_8y',NULL,0,'float, 2','Average Annual 8 year return'),
+(28,'aa_9y',NULL,0,'float, 2','Average Annual 9 year return'),
+(29,'aa_10y',NULL,0,'float, 2','Average Annual 10 year return'),
+(30,'aa_lof',NULL,0,'float, 2','Average Annual life of fund return');
+/*!40000 ALTER TABLE `IPF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `IRK_Key` WRITE;
+/*!40000 ALTER TABLE `IRK_Key` DISABLE KEYS */;
+INSERT INTO `IRK_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'period_type',NULL,1,'char(3)','Period for the risk measures: 3Y, 5Y, 10Y, LOF'),
+(5,'std_dev',NULL,0,'float, 2','Standard Deviation'),
+(6,'ann_std_dev',NULL,0,'float, 2','Annualized Standard Deviation'),
+(7,'ret_per_unit_risk',NULL,0,'float, 2','Return Per Unit of Risk'),
+(8,'sharpe',NULL,0,'float, 2','Sharpe’s ratio');
+/*!40000 ALTER TABLE `IRK_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `LGD_Key` WRITE;
+/*!40000 ALTER TABLE `LGD_Key` DISABLE KEYS */;
+INSERT INTO `LGD_Key` VALUES 
+(1,'lip_gr_id',NULL,1,'char(5)','Lipper Peer Group Id in Performance System'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'Lip_gr_name',NULL,0,'varchar(30)','Lipper Peer Group name'),
+(5,'pg_type',NULL,0,'char(1)','Lipper Peer Group type. Values:O-Objective Peer Group, C-Classification Peer Group,S-Supergroup (TO BE REMOVED ON 11/17 (INCLUDES ALL HISTORY))'),
+(6,'turnover_pct',NULL,0,'float(40)','Monthly turnover percent'),
+(7,'exp_ratio',NULL,0,'float(40)','Monthly expense ratio');
+/*!40000 ALTER TABLE `LGD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `LSP_Key` WRITE;
+/*!40000 ALTER TABLE `LSP_Key` DISABLE KEYS */;
+INSERT INTO `LSP_Key` VALUES 
+(311,'COMP_CD',NULL,1,'Varchar(20)','Composite Code'),
+(312,'RPT_M_DATE',NULL,1,'Varchar(6)','Reporting Month'),
+(313,'COMP_NAME',NULL,0,'Varchar(200)','Composite Name'),
+(314,'COMP_INCEPTION_DT',NULL,0,'Date','Composite Inception Date'),
+(315,'COMP_SDA_BMK_DT',NULL,0,'Date','Composite Since Benchmark Data Available Date'),
+(316,'COMP_ACCT_MARKET_VALUE',NULL,0,'Double(22,16)','Composite account market value'),
+(317,'COMP_CUM_GR_PT_3M',NULL,0,'Double(22,16)','Composite cumulative 3 month pre tax gross'),
+(318,'BMK_CUM_GR_PT_3M',NULL,0,'Double(22,16)','Benchmark cumulative 3 month pre tax gross'),
+(319,'EXCESS_CUM_GR_PT_3M',NULL,0,'Double(22,16)','Excess cumulative 3 month pre tax gross'),
+(320,'COMP_CUM_GR_AT_3M',NULL,0,'Double(22,16)','Composite cumulative 3 month after tax gross'),
+(321,'BMK_CUM_GR_AT_3M',NULL,0,'Double(22,16)','Benchmark cumulative 3 month after tax gross'),
+(322,'EXCESS_CUM_GR_AT_3M',NULL,0,'Double(22,16)','Excess cumulative 3 month after-tax gross'),
+(323,'COMP_CUM_GR_AT_CFA_3M',NULL,0,'Double(22,16)','Composite cumulative 3 month after tax with CFA gross'),
+(324,'BMK_CUM_GR_AT_UGL_3M',NULL,0,'Double(22,16)','Benchmark cumulative 3 month after tax with unrealized gain loss gross'),
+(325,'EXCESS_CUM_GR_AT_UGL_3M',NULL,0,'Double(22,16)','Excess cumulative 3 month after tax with unrealized gain loss gross'),
+(326,'BMK_UGL_FCTR_CUM_3M',NULL,0,'Double(22,16)','Benchmark cumulative 3 month unrealized gain loss factor'),
+(327,'COMP_CUM_GR_PT_6M',NULL,0,'Double(22,16)','Composite cumulative 6 month pre tax gross'),
+(328,'BMK_CUM_GR_PT_6M',NULL,0,'Double(22,16)','Benchmark cumulative 6 month pre tax gross'),
+(329,'EXCESS_CUM_GR_PT_6M',NULL,0,'Double(22,16)','Excess cumulative 6 month pre tax gross'),
+(330,'COMP_CUM_GR_AT_6M',NULL,0,'Double(22,16)','Composite cumulative 6 month after tax gross'),
+(331,'BMK_CUM_GR_AT_6M',NULL,0,'Double(22,16)','Benchmark cumulative 6 month after tax gross'),
+(332,'EXCESS_CUM_GR_AT_6M',NULL,0,'Double(22,16)','Excess cumulative 6 month after-tax gross'),
+(333,'COMP_CUM_GR_AT_CFA_6M',NULL,0,'Double(22,16)','Composite cumulative 6 month after tax with CFA gross'),
+(334,'BMK_CUM_GR_AT_UGL_6M',NULL,0,'Double(22,16)','Benchmark cumulative 6 month after tax with unrealized gain loss gross'),
+(335,'EXCESS_CUM_GR_AT_UGL_6M',NULL,0,'Double(22,16)','Excess cumulative 6 month after tax with unrealized gain loss gross'),
+(336,'BMK_UGL_FCTR_CUM_6M',NULL,0,'Double(22,16)','Benchmark cumulative 6 month unrealized gain loss factor'),
+(337,'COMP_CUM_GR_PT_9M',NULL,0,'Double(22,16)','Composite cumulative 9 month pre tax gross'),
+(338,'BMK_CUM_GR_PT_9M',NULL,0,'Double(22,16)','Benchmark cumulative 9 month pre tax gross'),
+(339,'EXCESS_CUM_GR_PT_9M',NULL,0,'Double(22,16)','Excess cumulative 9 month pre tax gross'),
+(340,'COMP_CUM_GR_AT_9M',NULL,0,'Double(22,16)','Composite cumulative 9 month after tax gross'),
+(341,'BMK_CUM_GR_AT_9M',NULL,0,'Double(22,16)','Benchmark cumulative 9 month after tax gross'),
+(342,'EXCESS_CUM_GR_AT_9M',NULL,0,'Double(22,16)','Excess cumulative 9 month after-tax gross'),
+(343,'COMP_CUM_GR_AT_CFA_9M',NULL,0,'Double(22,16)','Composite cumulative 9 month after tax with CFA gross'),
+(344,'BMK_CUM_GR_AT_UGL_9M',NULL,0,'Double(22,16)','Benchmark cumulative 9 month after tax with unrealized gain loss gross'),
+(345,'EXCESS_CUM_GR_AT_UGL_9M',NULL,0,'Double(22,16)','Excess cumulative 9 month after tax with unrealized gain loss gross'),
+(346,'BMK_UGL_FCTR_CUM_9M',NULL,0,'Double(22,16)','Benchmark cumulative 9 month unrealized gain loss factor'),
+(347,'COMP_CUM_GR_PT_1Y',NULL,0,'Double(22,16)','Composite cumulative 1 year pre tax gross'),
+(348,'BMK_CUM_GR_PT_1Y',NULL,0,'Double(22,16)','Benchmark cumulative 1 year pre tax gross'),
+(349,'EXCESS_CUM_GR_PT_1Y',NULL,0,'Double(22,16)','Excess cumulative 1 year pre tax gross'),
+(350,'COMP_CUM_GR_AT_1Y',NULL,0,'Double(22,16)','Composite cumulative 1 year after tax gross'),
+(351,'BMK_CUM_GR_AT_1Y',NULL,0,'Double(22,16)','Benchmark cumulative 1 year after tax gross'),
+(352,'EXCESS_CUM_GR_AT_1Y',NULL,0,'Double(22,16)','Excess cumulative 1 year after-tax gross'),
+(353,'COMP_CUM_GR_AT_CFA_1Y',NULL,0,'Double(22,16)','Composite cumulative 1 year after tax with CFA gross'),
+(354,'BMK_CUM_GR_AT_UGL_1Y',NULL,0,'Double(22,16)','Benchmark cumulative 1 year after tax with unrealized gain loss gross'),
+(355,'EXCESS_CUM_GR_AT_UGL_1Y',NULL,0,'Double(22,16)','Excess cumulative 1 year after tax with unrealized gain loss gross'),
+(356,'BMK_UGL_FCTR_CUM_1Y',NULL,0,'Double(22,16)','Benchmark cumulative 1 year unrealized gain loss factor'),
+(357,'COMP_CUM_GR_PT_YTD',NULL,0,'Double(22,16)','Composite cumulative year to date pre tax gross'),
+(358,'BMK_CUM_GR_PT_YTD',NULL,0,'Double(22,16)','Benchmark cumulative year to date pre tax gross'),
+(359,'EXCESS_CUM_GR_PT_YTD',NULL,0,'Double(22,16)','Excess cumulative year to date pre tax gross'),
+(360,'COMP_CUM_GR_AT_YTD',NULL,0,'Double(22,16)','Composite cumulative year to date after tax gross'),
+(361,'BMK_CUM_GR_AT_YTD',NULL,0,'Double(22,16)','Benchmark cumulative year to date after tax gross'),
+(362,'EXCESS_CUM_GR_AT_YTD',NULL,0,'Double(22,16)','Excess cumulative year to date after-tax gross'),
+(363,'COMP_CUM_GR_AT_CFA_YTD',NULL,0,'Double(22,16)','Composite cumulative year to date after tax with CFA gross'),
+(364,'BMK_CUM_GR_AT_UGL_YTD',NULL,0,'Double(22,16)','Benchmark cumulative year to date after tax with unrealized gain loss gross'),
+(365,'EXCESS_CUM_GR_AT_UGL_YTD',NULL,0,'Double(22,16)','Excess cumulative year to date after tax with unrealized gain loss gross'),
+(366,'BMK_UGL_FCTR_CUM_YTD',NULL,0,'Double(22,16)','Benchmark cumulative year to date unrealized gain loss factor'),
+(367,'COMP_CUM_GR_PT_3Y',NULL,0,'Double(22,16)','Composite cumulative 3 year pre tax gross'),
+(368,'BMK_CUM_GR_PT_3Y',NULL,0,'Double(22,16)','Benchmark cumulative 3 year pre tax gross'),
+(369,'EXCESS_CUM_GR_PT_3Y',NULL,0,'Double(22,16)','Excess cumulative 3 year pre tax gross'),
+(370,'COMP_CUM_GR_AT_3Y',NULL,0,'Double(22,16)','Composite cumulative 3 year after tax gross'),
+(371,'BMK_CUM_GR_AT_3Y',NULL,0,'Double(22,16)','Benchmark cumulative 3 year after tax gross'),
+(372,'EXCESS_CUM_GR_AT_3Y',NULL,0,'Double(22,16)','Excess cumulative 3 year after-tax gross'),
+(373,'COMP_CUM_GR_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite cumulative 3 year after tax with CFA gross'),
+(374,'BMK_CUM_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Benchmark cumulative 3 year after tax with unrealized gain loss gross'),
+(375,'EXCESS_CUM_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess cumulative 3 year after tax with unrealized gain loss gross'),
+(376,'BMK_UGL_FCTR_CUM_3Y',NULL,0,'Double(22,16)','Benchmark cumulative 3 year unrealized gain loss factor'),
+(377,'COMP_ANN_GR_PT_3Y',NULL,0,'Double(22,16)','Composite annualized 3 year pre tax gross'),
+(378,'BMK_ANN_GR_PT_3Y',NULL,0,'Double(22,16)','Benchmark annualized 3 year pre tax gross'),
+(379,'EXCESS_ANN_GR_PT_3Y',NULL,0,'Double(22,16)','Excess annualized 3 year pre tax gross'),
+(380,'COMP_ANN_GR_AT_3Y',NULL,0,'Double(22,16)','Composite annualized 3 year after tax gross'),
+(381,'BMK_ANN_GR_AT_3Y',NULL,0,'Double(22,16)','Benchmark annualized 3 year after tax gross'),
+(382,'EXCESS_ANN_GR_AT_3Y',NULL,0,'Double(22,16)','Excess annualized 3 year after-tax gross'),
+(383,'COMP_ANN_GR_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite annualized 3 year after tax with CFA gross'),
+(384,'BMK_ANN_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Benchmark annualized 3 year after tax with unrealized gain loss gross'),
+(385,'EXCESS_ANN_GR_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess annualized 3 year after tax with unrealized gain loss gross'),
+(386,'BMK_UGL_FCTR_ANN_3Y',NULL,0,'Double(22,16)','Benchmark annualized 3 year unrealized gain loss factor'),
+(387,'COMP_CUM_GR_PT_5Y',NULL,0,'Double(22,16)','Composite cumulative 5 year pre tax gross'),
+(388,'BMK_CUM_GR_PT_5Y',NULL,0,'Double(22,16)','Benchmark cumulative 5 year pre tax gross'),
+(389,'EXCESS_CUM_GR_PT_5Y',NULL,0,'Double(22,16)','Excess cumulative 5 year pre tax gross'),
+(390,'COMP_CUM_GR_AT_5Y',NULL,0,'Double(22,16)','Composite cumulative 5 year after tax gross'),
+(391,'BMK_CUM_GR_AT_5Y',NULL,0,'Double(22,16)','Benchmark cumulative 5 year after tax gross'),
+(392,'EXCESS_CUM_GR_AT_5Y',NULL,0,'Double(22,16)','Excess cumulative 5 year after-tax gross'),
+(393,'COMP_CUM_GR_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite cumulative 5 year after tax with CFA gross'),
+(394,'BMK_CUM_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Benchmark cumulative 5 year after tax with unrealized gain loss gross'),
+(395,'EXCESS_CUM_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess cumulative 5 year after tax with unrealized gain loss gross'),
+(396,'BMK_UGL_FCTR_CUM_5Y',NULL,0,'Double(22,16)','Benchmark cumulative 5 year unrealized gain loss factor'),
+(397,'COMP_ANN_GR_PT_5Y',NULL,0,'Double(22,16)','Composite annualized 5 year pre tax gross'),
+(398,'BMK_ANN_GR_PT_5Y',NULL,0,'Double(22,16)','Benchmark annualized 5 year pre tax gross'),
+(399,'EXCESS_ANN_GR_PT_5Y',NULL,0,'Double(22,16)','Excess annualized 5 year pre tax gross'),
+(400,'COMP_ANN_GR_AT_5Y',NULL,0,'Double(22,16)','Composite annualized 5 year after tax gross'),
+(401,'BMK_ANN_GR_AT_5Y',NULL,0,'Double(22,16)','Benchmark annualized 5 year after tax gross'),
+(402,'EXCESS_ANN_GR_AT_5Y',NULL,0,'Double(22,16)','Excess annualized 5 year after-tax gross'),
+(403,'COMP_ANN_GR_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite annualized 5 year after tax with CFA gross'),
+(404,'BMK_ANN_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Benchmark annualized 5 year after tax with unrealized gain loss gross'),
+(405,'EXCESS_ANN_GR_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess annualized 5 year after tax with unrealized gain loss gross'),
+(406,'BMK_UGL_FCTR_ANN_5Y',NULL,0,'Double(22,16)','Benchmark annualized 5 year unrealized gain loss factor'),
+(407,'COMP_CUM_GR_PT_10Y',NULL,0,'Double(22,16)','Composite cumulative 10 year pre tax gross'),
+(408,'BMK_CUM_GR_PT_10Y',NULL,0,'Double(22,16)','Benchmark cumulative 10 year pre tax gross'),
+(409,'EXCESS_CUM_GR_PT_10Y',NULL,0,'Double(22,16)','Excess cumulative 10 year pre tax gross'),
+(410,'COMP_CUM_GR_AT_10Y',NULL,0,'Double(22,16)','Composite cumulative 10 year after tax gross'),
+(411,'BMK_CUM_GR_AT_10Y',NULL,0,'Double(22,16)','Benchmark cumulative 10 year after tax gross'),
+(412,'EXCESS_CUM_GR_AT_10Y',NULL,0,'Double(22,16)','Excess cumulative 10 year after-tax gross'),
+(413,'COMP_CUM_GR_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite cumulative 10 year after tax with CFA gross'),
+(414,'BMK_CUM_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Benchmark cumulative 10 year after tax with unrealized gain loss gross'),
+(415,'EXCESS_CUM_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess cumulative 10 year after tax with unrealized gain loss gross'),
+(416,'BMK_UGL_FCTR_CUM_10Y',NULL,0,'Double(22,16)','Benchmark cumulative 10 year unrealized gain loss factor'),
+(417,'COMP_ANN_GR_PT_10Y',NULL,0,'Double(22,16)','Composite annualized 10 year pre tax gross'),
+(418,'BMK_ANN_GR_PT_10Y',NULL,0,'Double(22,16)','Benchmark annualized 10 year pre tax gross'),
+(419,'EXCESS_ANN_GR_PT_10Y',NULL,0,'Double(22,16)','Excess annualized 10 year pre tax gross'),
+(420,'COMP_ANN_GR_AT_10Y',NULL,0,'Double(22,16)','Composite annualized 10 year after tax gross'),
+(421,'BMK_ANN_GR_AT_10Y',NULL,0,'Double(22,16)','Benchmark annualized 10 year after tax gross'),
+(422,'EXCESS_ANN_GR_AT_10Y',NULL,0,'Double(22,16)','Excess annualized 10 year after-tax gross'),
+(423,'COMP_ANN_GR_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite annualized 10 year after tax with CFA gross'),
+(424,'BMK_ANN_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Benchmark annualized 10 year after tax with unrealized gain loss gross'),
+(425,'EXCESS_ANN_GR_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess annualized 10 year after tax with unrealized gain loss gross'),
+(426,'BMK_UGL_FCTR_ANN_10Y',NULL,0,'Double(22,16)','Benchmark annualized 10 year unrealized gain loss factor'),
+(427,'COMP_CUM_GR_PT_SDA',NULL,0,'Double(22,16)','Composite cumulative since data available  pre tax gross'),
+(428,'BMK_CUM_GR_PT_SDA',NULL,0,'Double(22,16)','Benchmark cumulative since data available pre tax gross'),
+(429,'EXCESS_CUM_GR_PT_SDA',NULL,0,'Double(22,16)','Excess cumulative since data available pre tax gross'),
+(430,'COMP_CUM_GR_AT_SDA',NULL,0,'Double(22,16)','Composite cumulative since data available after tax gross'),
+(431,'BMK_CUM_GR_AT_SDA',NULL,0,'Double(22,16)','Benchmark cumulative since data available after tax gross'),
+(432,'EXCESS_CUM_GR_AT_SDA',NULL,0,'Double(22,16)','Excess cumulative since data available after-tax gross'),
+(433,'COMP_CUM_GR_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite cumulative since data available after tax with CFA gross'),
+(434,'BMK_CUM_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Benchmark cumulative since data available after tax with unrealized gain loss gross'),
+(435,'EXCESS_CUM_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess cumulative since data available after tax with unrealized gain loss gross'),
+(436,'BMK_UGL_FCTR_CUM_SDA',NULL,0,'Double(22,16)','Benchmark cumulative since data available unrealized gain loss factor'),
+(437,'COMP_ANN_GR_PT_SDA',NULL,0,'Double(22,16)','Composite annualized since data available pre tax gross'),
+(438,'BMK_ANN_GR_PT_SDA',NULL,0,'Double(22,16)','Benchmark annualized since data available pre tax gross'),
+(439,'EXCESS_ANN_GR_PT_SDA',NULL,0,'Double(22,16)','Excess annualized since data available pre tax gross'),
+(440,'COMP_ANN_GR_AT_SDA',NULL,0,'Double(22,16)','Composite annualized since data available after tax gross'),
+(441,'BMK_ANN_GR_AT_SDA',NULL,0,'Double(22,16)','Benchmark annualized since data available after tax gross'),
+(442,'EXCESS_ANN_GR_AT_SDA',NULL,0,'Double(22,16)','Excess annualized since data available after-tax gross'),
+(443,'COMP_ANN_GR_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite annualized since data available after tax with CFA gross'),
+(444,'BMK_ANN_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Benchmark annualized since data available after tax with unrealized gain loss gross'),
+(445,'EXCESS_ANN_GR_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess annualized since data available after tax with unrealized gain loss gross'),
+(446,'BMK_UGL_FCTR_ANN_SDA',NULL,0,'Double(22,16)','Benchmark annualized since data available unrealized gain loss factor'),
+(447,'COMP_CUM_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite cumulative since benchmark data available  pre tax gross'),
+(448,'BMK_CUM_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark cumulative since benchmark data available pre tax gross'),
+(449,'EXCESS_CUM_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess cumulative since benchmark data available pre tax gross'),
+(450,'COMP_CUM_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite cumulative since benchmark data available after tax gross'),
+(451,'BMK_CUM_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark cumulative since benchmark data available after tax gross'),
+(452,'EXCESS_CUM_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess cumulative since benchmark data available after-tax gross'),
+(453,'COMP_CUM_GR_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite cumulative since benchmark data available after tax with CFA gross'),
+(454,'BMK_CUM_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Benchmark cumulative since benchmark data available after tax with unrealized gain loss gross'),
+(455,'EXCESS_CUM_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess cumulative since benchmark data available after tax with unrealized gain loss gross'),
+(456,'BMK_UGL_FCTR_CUM_SDA_BMK',NULL,0,'Double(22,16)','Benchmark cumulative since benchmark data available unrealized gain loss factor'),
+(457,'COMP_ANN_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite annualized since benchmark data available pre tax gross'),
+(458,'BMK_ANN_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark annualized since benchmark data available pre tax gross'),
+(459,'EXCESS_ANN_GR_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess annualized since benchmark data available pre tax gross'),
+(460,'COMP_ANN_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite annualized since benchmark data available after tax gross'),
+(461,'BMK_ANN_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Benchmark annualized since benchmark data available after tax gross'),
+(462,'EXCESS_ANN_GR_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess annualized since benchmark data available after-tax gross'),
+(463,'COMP_ANN_GR_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite annualized since benchmark data available after tax with CFA gross'),
+(464,'BMK_ANN_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Benchmark annualized since benchmark data available after tax with unrealized gain loss gross'),
+(465,'EXCESS_ANN_GR_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess annualized since benchmark data available after tax with unrealized gain loss gross'),
+(466,'BMK_UGL_FCTR_ANN_SDA_BMK',NULL,0,'Double(22,16)','Benchmark annualized since benchmark data available unrealized gain loss factor'),
+(467,'PRIOR_1Y_COMP_CUM_GR_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year pre tax gross'),
+(468,'PRIOR_1Y_BMK_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 1 (calendar) year pre tax gross'),
+(469,'PRIOR_1Y_EXCESS_CUM_GR_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 1 (calendar) year pre tax gross'),
+(470,'PRIOR_1Y_COMP_CUM_GR_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year after tax gross'),
+(471,'PRIOR_1Y_BMK_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 1 (calendar) year after tax gross'),
+(472,'PRIOR_1Y_EXCESS_CUM_GR_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 1 (calendar) year after tax gross'),
+(473,'PRIOR_1Y_COMP_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year after tax with CFA gross'),
+(474,'PRIOR_1Y_BMK_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark cumulative prior year 1 (calendar) year after tax with unrealized gain loss gross'),
+(475,'PRIOR_1Y_EXCESS_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 1 (calendar) year after tax with unrealized gain loss gross'),
+(476,'PRIOR_1Y_BMK_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark cumulative prior 1 (calendar) year unrealized gain loss factor'),
+(477,'PRIOR_2Y_COMP_CUM_GR_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year pre tax gross'),
+(478,'PRIOR_2Y_BMK_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 2 (calendar) year pre tax gross'),
+(479,'PRIOR_2Y_EXCESS_CUM_GR_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 2 (calendar) year pre tax gross'),
+(480,'PRIOR_2Y_COMP_CUM_GR_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 2 (calendar) year after tax gross'),
+(481,'PRIOR_2Y_BMK_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 2 (calendar) year after tax gross'),
+(482,'PRIOR_2Y_EXCESS_CUM_GR_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 2 (calendar) year after tax gross'),
+(483,'PRIOR_2Y_COMP_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 2 (calendar) year after tax with CFA gross'),
+(484,'PRIOR_2Y_BMK_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark cumulative prior year 2 (calendar) year after tax with unrealized gain loss gross'),
+(485,'PRIOR_2Y_EXCESS_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 2 (calendar) year after tax with unrealized gain loss gross'),
+(486,'PRIOR_2Y_BMK_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark cumulative prior 2 (calendar) year unrealized gain loss factor'),
+(487,'PRIOR_3Y_COMP_CUM_GR_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 3 (calendar) year pre tax gross'),
+(488,'PRIOR_3Y_BMK_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 3 (calendar) year pre tax gross'),
+(489,'PRIOR_3Y_EXCESS_CUM_GR_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 3 (calendar) year pre tax gross'),
+(490,'PRIOR_3Y_COMP_CUM_GR_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 3 (calendar) year after tax gross'),
+(491,'PRIOR_3Y_BMK_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 3 (calendar) year after tax gross'),
+(492,'PRIOR_3Y_EXCESS_CUM_GR_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 3 (calendar) year after tax gross'),
+(493,'PRIOR_3Y_COMP_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 3 (calendar) year after tax with unrealized gain loss gross'),
+(494,'PRIOR_3Y_BMK_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark cumulative prior year 3 (calendar) year after tax with unrealized gain loss gross'),
+(495,'PRIOR_3Y_EXCESS_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 3 (calendar) year after tax with unrealized gain loss gross'),
+(496,'PRIOR_3Y_BMK_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark cumulative prior 3 (calendar) year unrealized gain loss factor'),
+(497,'PRIOR_4Y_COMP_CUM_GR_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 4 (calendar) year pre tax gross'),
+(498,'PRIOR_4Y_BMK_CUM_GR_PT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 4 (calendar) year pre tax gross'),
+(499,'PRIOR_4Y_EXCESS_CUM_GR_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 4 (calendar) year pre tax gross'),
+(500,'PRIOR_4Y_COMP_CUM_GR_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 4 (calendar) year after tax gross'),
+(501,'PRIOR_4Y_BMK_CUM_GR_AT',NULL,0,'Double(22,16)','Benchmark cumulative prior year 4 (calendar) year after tax gross'),
+(502,'PRIOR_4Y_EXCESS_CUM_GR_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 4 (calendar) year after tax gross'),
+(503,'PRIOR_4Y_COMP_CUM_GR_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 4 (calendar) year after tax with CFA gross'),
+(504,'PRIOR_4Y_BMK_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Benchmark cumulative prior year 4 (calendar) year after tax with unrealized gain loss gross'),
+(505,'PRIOR_4Y_EXCESS_CUM_GR_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 4 (calendar) year after tax with unrealized gain loss gross'),
+(506,'PRIOR_4Y_BMK_UGL_FCTR_CUM',NULL,0,'Double(22,16)','Benchmark cumulative prior 4 (calendar) year unrealized gain loss factor'),
+(507,'COMP_CUM_NET_PT_3M',NULL,0,'Double(22,16)','Composite cumulative 3 month pre tax net'),
+(508,'EXCESS_CUM_NET_PT_3M',NULL,0,'Double(22,16)','Excess cumulative 3 month pre tax net'),
+(509,'COMP_CUM_NET_AT_3M',NULL,0,'Double(22,16)','Composite cumulative 3 month after tax net'),
+(510,'EXCESS_CUM_NET_AT_3M',NULL,0,'Double(22,16)','Excess cumulative 3 month after-tax net'),
+(511,'COMP_CUM_NET_AT_CFA_3M',NULL,0,'Double(22,16)','Composite cumulative 3 month after tax with CFA net'),
+(512,'EXCESS_CUM_NET_AT_UGL_3M',NULL,0,'Double(22,16)','Excess cumulative 3 month after tax with unrealized gain loss net'),
+(513,'COMP_CUM_NET_PT_6M',NULL,0,'Double(22,16)','Composite cumulative 6 month pre tax net'),
+(514,'EXCESS_CUM_NET_PT_6M',NULL,0,'Double(22,16)','Excess cumulative 6 month pre tax net'),
+(515,'COMP_CUM_NET_AT_6M',NULL,0,'Double(22,16)','Composite cumulative 6 month after tax net'),
+(516,'EXCESS_CUM_NET_AT_6M',NULL,0,'Double(22,16)','Excess cumulative 6 month after-tax net'),
+(517,'COMP_CUM_NET_AT_CFA_6M',NULL,0,'Double(22,16)','Composite cumulative 6 month after tax with CFA net'),
+(518,'EXCESS_CUM_NET_AT_UGL_6M',NULL,0,'Double(22,16)','Excess cumulative 6 month after tax with unrealized gain loss net'),
+(519,'COMP_CUM_NET_PT_9M',NULL,0,'Double(22,16)','Composite cumulative 9 month pre tax net'),
+(520,'EXCESS_CUM_NET_PT_9M',NULL,0,'Double(22,16)','Excess cumulative 9 month pre tax net'),
+(521,'COMP_CUM_NET_AT_9M',NULL,0,'Double(22,16)','Composite cumulative 9 month after tax gross'),
+(522,'EXCESS_CUM_NET_AT_9M',NULL,0,'Double(22,16)','Excess cumulative 9 month after-tax net'),
+(523,'COMP_CUM_NET_AT_CFA_9M',NULL,0,'Double(22,16)','Composite cumulative 9 month after tax with CFA net'),
+(524,'EXCESS_CUM_NET_AT_UGL_9M',NULL,0,'Double(22,16)','Excess cumulative 9 month after tax with unrealized gain loss net'),
+(525,'COMP_CUM_NET_PT_1Y',NULL,0,'Double(22,16)','Composite cumulative 1 year pre tax net'),
+(526,'EXCESS_CUM_NET_PT_1Y',NULL,0,'Double(22,16)','Excess cumulative 1 year pre tax net'),
+(527,'COMP_CUM_NET_AT_1Y',NULL,0,'Double(22,16)','Composite cumulative 1 year after tax net'),
+(528,'EXCESS_CUM_NET_AT_1Y',NULL,0,'Double(22,16)','Excess cumulative 1 year after-tax net'),
+(529,'COMP_CUM_NET_AT_CFA_1Y',NULL,0,'Double(22,16)','Composite cumulative 1 year after tax with CFA net'),
+(530,'EXCESS_CUM_NET_AT_UGL_1Y',NULL,0,'Double(22,16)','Excess cumulative 1 year after tax with unrealized gain loss net'),
+(531,'COMP_CUM_NET_PT_YTD',NULL,0,'Double(22,16)','Composite cumulative year to date pre tax net'),
+(532,'EXCESS_CUM_NET_PT_YTD',NULL,0,'Double(22,16)','Excess cumulative year to date pre tax net'),
+(533,'COMP_CUM_NET_AT_YTD',NULL,0,'Double(22,16)','Composite cumulative year to date after tax net'),
+(534,'EXCESS_CUM_NET_AT_YTD',NULL,0,'Double(22,16)','Excess cumulative year to date after-tax net'),
+(535,'COMP_CUM_NET_AT_CFA_YTD',NULL,0,'Double(22,16)','Composite cumulative year to date after tax with CFA net'),
+(536,'EXCESS_CUM_NET_AT_UGL_YTD',NULL,0,'Double(22,16)','Excess cumulative year to date after tax with unrealized gain loss net'),
+(537,'COMP_CUM_NET_PT_3Y',NULL,0,'Double(22,16)','Composite cumulative 3 year pre tax net'),
+(538,'EXCESS_CUM_NET_PT_3Y',NULL,0,'Double(22,16)','Excess cumulative 3 year pre tax net'),
+(539,'COMP_CUM_NET_AT_3Y',NULL,0,'Double(22,16)','Composite cumulative 3 year after tax net'),
+(540,'EXCESS_CUM_NET_AT_3Y',NULL,0,'Double(22,16)','Excess cumulative 3 year after-tax net'),
+(541,'COMP_CUM_NET_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite cumulative 3 year after tax with CFA net'),
+(542,'EXCESS_CUM_NET_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess cumulative 3 year after tax with unrealized gain loss net'),
+(543,'COMP_ANN_NET_PT_3Y',NULL,0,'Double(22,16)','Composite annualized 3 year pre tax net'),
+(544,'EXCESS_ANN_NET_PT_3Y',NULL,0,'Double(22,16)','Excess annualized 3 year pre tax net'),
+(545,'COMP_ANN_NET_AT_3Y',NULL,0,'Double(22,16)','Composite annualized 3 year after tax net'),
+(546,'EXCESS_ANN_NET_AT_3Y',NULL,0,'Double(22,16)','Excess annualized 3 year after-tax net'),
+(547,'COMP_ANN_NET_AT_CFA_3Y',NULL,0,'Double(22,16)','Composite annualized 3 year after tax with CFA net'),
+(548,'EXCESS_ANN_NET_AT_UGL_3Y',NULL,0,'Double(22,16)','Excess annualized 3 year after tax with unrealized gain loss net'),
+(549,'COMP_CUM_NET_PT_5Y',NULL,0,'Double(22,16)','Composite cumulative 5 year pre tax net'),
+(550,'EXCESS_CUM_NET_PT_5Y',NULL,0,'Double(22,16)','Excess cumulative 5 year pre tax net'),
+(551,'COMP_CUM_NET_AT_5Y',NULL,0,'Double(22,16)','Composite cumulative 5 year after tax net'),
+(552,'EXCESS_CUM_NET_AT_5Y',NULL,0,'Double(22,16)','Excess cumulative 5 year after-tax net'),
+(553,'COMP_CUM_NET_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite cumulative 5 year after tax with CFA net'),
+(554,'EXCESS_CUM_NET_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess cumulative 5 year after tax with unrealized gain loss net'),
+(555,'COMP_ANN_NET_PT_5Y',NULL,0,'Double(22,16)','Composite annualized 5 year pre tax net'),
+(556,'EXCESS_ANN_NET_PT_5Y',NULL,0,'Double(22,16)','Excess annualized 5 year pre tax net'),
+(557,'COMP_ANN_NET_AT_5Y',NULL,0,'Double(22,16)','Composite annualized 5 year after tax net'),
+(558,'EXCESS_ANN_NET_AT_5Y',NULL,0,'Double(22,16)','Excess annualized 5 year after-tax net'),
+(559,'COMP_ANN_NET_AT_CFA_5Y',NULL,0,'Double(22,16)','Composite annualized 5 year after tax with CFA net'),
+(560,'EXCESS_ANN_NET_AT_UGL_5Y',NULL,0,'Double(22,16)','Excess annualized 5 year after tax with unrealized gain loss net'),
+(561,'COMP_CUM_NET_PT_10Y',NULL,0,'Double(22,16)','Composite cumulative 10 year pre tax net'),
+(562,'EXCESS_CUM_NET_PT_10Y',NULL,0,'Double(22,16)','Excess cumulative 10 year pre tax net'),
+(563,'COMP_CUM_NET_AT_10Y',NULL,0,'Double(22,16)','Composite cumulative 10 year after tax net'),
+(564,'EXCESS_CUM_NET_AT_10Y',NULL,0,'Double(22,16)','Excess cumulative 10 year after-tax net'),
+(565,'COMP_CUM_NET_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite cumulative 10 year after tax with CFA net'),
+(566,'EXCESS_CUM_NET_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess cumulative 10 year after tax with unrealized gain loss net'),
+(567,'COMP_ANN_NET_PT_10Y',NULL,0,'Double(22,16)','Composite annualized 10 year pre tax net'),
+(568,'EXCESS_ANN_NET_PT_10Y',NULL,0,'Double(22,16)','Excess annualized 10 year pre tax net'),
+(569,'COMP_ANN_NET_AT_10Y',NULL,0,'Double(22,16)','Composite annualized 10 year after tax net'),
+(570,'EXCESS_ANN_NET_AT_10Y',NULL,0,'Double(22,16)','Excess annualized 10 year after-tax net'),
+(571,'COMP_ANN_NET_AT_CFA_10Y',NULL,0,'Double(22,16)','Composite annualized 10 year after tax with CFA net'),
+(572,'EXCESS_ANN_NET_AT_UGL_10Y',NULL,0,'Double(22,16)','Excess annualized 10 year after tax with unrealized gain loss net'),
+(573,'COMP_CUM_NET_PT_SDA',NULL,0,'Double(22,16)','Composite cumulative since data available  pre tax net'),
+(574,'EXCESS_CUM_NET_PT_SDA',NULL,0,'Double(22,16)','Excess cumulative since data available pre tax net'),
+(575,'COMP_CUM_NET_AT_SDA',NULL,0,'Double(22,16)','Composite cumulative since data available after tax net'),
+(576,'EXCESS_CUM_NET_AT_SDA',NULL,0,'Double(22,16)','Excess cumulative since data available after-tax net'),
+(577,'COMP_CUM_NET_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite cumulative since data available after tax with CFA net'),
+(578,'EXCESS_CUM_NET_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess cumulative since data available after tax with unrealized gain loss net'),
+(579,'COMP_ANN_NET_PT_SDA',NULL,0,'Double(22,16)','Composite annualized since data available pre tax net'),
+(580,'EXCESS_ANN_NET_PT_SDA',NULL,0,'Double(22,16)','Excess annualized since data available pre tax net'),
+(581,'COMP_ANN_NET_AT_SDA',NULL,0,'Double(22,16)','Composite annualized since data available after tax net'),
+(582,'EXCESS_ANN_NET_AT_SDA',NULL,0,'Double(22,16)','Excess annualized since data available after-tax gross'),
+(583,'COMP_ANN_NET_AT_CFA_SDA',NULL,0,'Double(22,16)','Composite annualized since data available after tax with CFA net'),
+(584,'EXCESS_ANN_NET_AT_UGL_SDA',NULL,0,'Double(22,16)','Excess annualized since data available after tax with unrealized gain loss net'),
+(585,'COMP_CUM_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite cumulative since benchmark data available  pre tax net'),
+(586,'EXCESS_CUM_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess cumulative since benchmark data available pre tax net'),
+(587,'COMP_CUM_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite cumulative since benchmark data available after tax net'),
+(588,'EXCESS_CUM_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess cumulative since benchmark data available after-tax net'),
+(589,'COMP_CUM_NET_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite cumulative since benchmark data available after tax with CFA net'),
+(590,'EXCESS_CUM_NET_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess cumulative since benchmark data available after tax with unrealized gain loss net'),
+(591,'COMP_ANN_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Composite annualized since benchmark data available pre tax net'),
+(592,'EXCESS_ANN_NET_PT_SDA_BMK',NULL,0,'Double(22,16)','Excess annualized since benchmark data available pre tax net'),
+(593,'COMP_ANN_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Composite annualized since benchmark data available after tax net'),
+(594,'EXCESS_ANN_NET_AT_SDA_BMK',NULL,0,'Double(22,16)','Excess annualized since benchmark data available after-tax net'),
+(595,'COMP_ANN_NET_AT_CFA_SDA_BMK',NULL,0,'Double(22,16)','Composite annualized since benchmark data available after tax with CFA net'),
+(596,'EXCESS_ANN_NET_AT_UGL_SDA_BMK',NULL,0,'Double(22,16)','Excess annualized since benchmark data available after tax with unrealized gain loss net'),
+(597,'PRIOR_1Y_COMP_CUM_NET_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year pre tax net'),
+(598,'PRIOR_1Y_EXCESS_CUM_NET_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 1 (calendar) year pre tax net'),
+(599,'PRIOR_1Y_COMP_CUM_NET_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year after tax net'),
+(600,'PRIOR_1Y_EXCESS_CUM_NET_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 1 (calendar) year after tax net'),
+(601,'PRIOR_1Y_COMP_CUM_NET_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 1 (calendar) year after tax with CFA net'),
+(602,'PRIOR_1Y_EXCESS_CUM_NET_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 1 (calendar) year after tax with CFA net'),
+(603,'PRIOR_2Y_COMP_CUM_NET_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 2 (calendar) year pre tax net'),
+(604,'PRIOR_2Y_EXCESS_CUM_NET_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 2 (calendar) year pre tax net'),
+(605,'PRIOR_2Y_COMP_CUM_NET_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 2 (calendar) year after tax net'),
+(606,'PRIOR_2Y_EXCESS_CUM_NET_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 2 (calendar) year after tax net'),
+(607,'PRIOR_2Y_COMP_CUM_NET_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 2 (calendar) year after tax with CFA net'),
+(608,'PRIOR_2Y_EXCESS_CUM_NET_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 2 (calendar) year after tax with CFA net'),
+(609,'PRIOR_3Y_COMP_CUM_NET_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 3 (calendar) year pre tax net'),
+(610,'PRIOR_3Y_EXCESS_CUM_NET_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 3 (calendar) year pre tax net'),
+(611,'PRIOR_3Y_COMP_CUM_NET_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 3 (calendar) year after tax net'),
+(612,'PRIOR_3Y_EXCESS_CUM_NET_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 3 (calendar) year after tax net'),
+(613,'PRIOR_3Y_COMP_CUM_NET_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 3 (calendar) year after tax with CFA net'),
+(614,'PRIOR_3Y_EXCESS_CUM_NET_AT_UGL',NULL,0,'Double(22,16)','Benchmark cumulative prior year 3 (calendar) year after tax with unrealized gain loss net'),
+(615,'PRIOR_4Y_COMP_CUM_NET_PT',NULL,0,'Double(22,16)','Composite cumulative prior year 4 (calendar) year pre tax net'),
+(616,'PRIOR_4Y_EXCESS_CUM_NET_PT',NULL,0,'Double(22,16)','Excess cumulative prior year 4 (calendar) year pre tax net'),
+(617,'PRIOR_4Y_COMP_CUM_NET_AT',NULL,0,'Double(22,16)','Composite cumulative prior year 4 (calendar) year after tax net'),
+(618,'PRIOR_4Y_EXCESS_CUM_NET_AT',NULL,0,'Double(22,16)','Excess cumulative prior year 4 (calendar) year after tax net'),
+(619,'PRIOR_4Y_COMP_CUM_NET_AT_CFA',NULL,0,'Double(22,16)','Composite cumulative prior year 4 (calendar) year after tax with CFA net'),
+(620,'PRIOR_4Y_EXCESS_CUM_NET_AT_UGL',NULL,0,'Double(22,16)','Excess cumulative prior year 4 (calendar) year after tax with unrealized gain loss net');
+/*!40000 ALTER TABLE `LSP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+LOCK TABLES `LST_Key` WRITE;
+/*!40000 ALTER TABLE `LST_Key` DISABLE KEYS */;
+INSERT INTO `LST_Key` VALUES 
+(1,'type_c',NULL,1,'char(1)','Type of last day. Values: B-Last business day,C-Last calendar day'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'day_d',NULL,1,'int','Day (1-31)'),
+(5,'calendar_id',NULL,1,'char(2)','Financial calendar. NY – New York Stock Exchange');
+/*!40000 ALTER TABLE `LST_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `LTM_Key` WRITE;
+/*!40000 ALTER TABLE `LTM_Key` DISABLE KEYS */;
+INSERT INTO `LTM_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'ret_ind',NULL,1,'char(1)','Load(fee)/No Load(fee) flag  Values:  Y.N'),
+(5,'cum_ytd',NULL,0,'float, 2','Cumulative YTD return'),
+(6,'cum_1m',NULL,0,'float, 2','Cumulative 1 month return'),
+(7,'cum_3m',NULL,0,'float, 2','Cumulative 3 month return'),
+(8,'cum_6m',NULL,0,'float, 2','Cumulative 6 month return'),
+(9,'cum_9m',NULL,0,'float, 2','Cumulative 9 month return'),
+(10,'cum_1y',NULL,0,'float, 2','Cumulative 1 year return'),
+(11,'cum_2y',NULL,0,'float, 2','Cumulative 2 year return'),
+(12,'cum_3y',NULL,0,'float, 2','Cumulative 3 year return'),
+(13,'cum_4y',NULL,0,'float, 2','Cumulative 4 year return'),
+(14,'cum_5y',NULL,0,'float, 2','Cumulative 5 year return'),
+(15,'cum_6y',NULL,0,'float, 2','Cumulative 6 year return'),
+(16,'cum_7y',NULL,0,'float, 2','Cumulative 7 year return'),
+(17,'cum_8y',NULL,0,'float, 2','Cumulative 8 year return'),
+(18,'cum_9y',NULL,0,'float, 2','Cumulative 9 year return'),
+(19,'cum_10y',NULL,0,'float, 2','Cumulative 10 year return'),
+(20,'cum_lof',NULL,0,'float, 2','Cumulative life of fund return'),
+(21,'aa_1y',NULL,0,'float, 2','Average Annual 1 year return'),
+(22,'aa_2y',NULL,0,'float, 2','Average Annual 2 year return'),
+(23,'aa_3y',NULL,0,'float, 2','Average Annual 3 year return'),
+(24,'aa_4y',NULL,0,'float, 2','Average Annual 4 year return'),
+(25,'aa_5y',NULL,0,'float, 2','Average Annual 5 year return'),
+(26,'aa_6y',NULL,0,'float, 2','Average Annual 6 year return'),
+(27,'aa_7y',NULL,0,'float, 2','Average Annual 7 year return'),
+(28,'aa_8y',NULL,0,'float, 2','Average Annual 8 year return'),
+(29,'aa_9y',NULL,0,'float, 2','Average Annual 9 year return'),
+(30,'aa_10y',NULL,0,'float, 2','Average Annual 10 year return'),
+(31,'aa_lof',NULL,0,'float, 2','Average Annual life of fund return');
+/*!40000 ALTER TABLE `LTM_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MDG_Key` WRITE;
+/*!40000 ALTER TABLE `MDG_Key` DISABLE KEYS */;
+INSERT INTO `MDG_Key` VALUES 
+(1,'person_id',NULL,1,'int','Manager ID'),
+(2,'degree_type',NULL,1,'char(5)','Type of academic degree that Fund Manager has achieved. Values: 1-BS,2-BA,3-MS,4-PhD,5-MBA,6-MA,7-BBA,8-BSC,9-AB,10-BSE,11-MPA,12-MSE,13-JD,14-B. Comm.,15-M.D.,16-L.L.M,17-BsocSc,18-M.P.P.M.,19-MSc'),
+(3,'grad_year',NULL,0,'int','Year the degree was conferred'),
+(4,'description',NULL,0,'char(50)','Description of academic degree that Fund Manager has conferred.'),
+(5,'school',NULL,0,'char(255)','Where the academic degree was awarded from');
+/*!40000 ALTER TABLE `MDG_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MFD_Key` WRITE;
+/*!40000 ALTER TABLE `MFD_Key` DISABLE KEYS */;
+INSERT INTO `MFD_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'fund_id',NULL,0,'char(5)','The Performance System Fund Identifier'),
+(3,'fund_type',NULL,0,'char(5)','Fund type Values: BD-Bond Funds,EQ-Equity Funds,IT-International Funds,MM-Money Market Funds,ST-Select Portfolios,OT-Other Funds'),
+(4,'name',NULL,0,'char(30)','An abbreviated form of the full long/legal fund name'),
+(5,'cop_date',NULL,0,'date(10)','Fund inception date - the date on which the financial instrument became available to be traded.'),
+(6,'fiscal_month',NULL,0,'int','The month in which the fiscal year ends for a given financial instrument.'),
+(7,'agg_ownr_lmt',NULL,0,'float(40)','Aggregate ownership limit - the maximum amount of a given financial instrument that is allowable to be owned by an individual.'),
+(8,'max_alt_tax_alwd_pct',NULL,0,'float(40)','Alternate minimum tax allowed - the maximum amount of AMT (a federal tax) allowed for the fund.  Valid range = 0 - 100.'),
+(9,'max_oos_papr_pct',NULL,0,'float(40)','Out-of-state-paper maximum - the maximum out-of-state paper amount allowed for a specific fund.  Valid range = 0 - 100.'),
+(10,'maps_code',NULL,0,'char(7)','Maps code - a Fidelity provided marketing code to identify literature and marketing kits mailed to potential and existing investors.'),
+(13,'cusip',NULL,0,'char(9)','CUSIP - an identification number assigned to each fund by the Committee on Uniform Security Identification Procedures'),
+(14,'qtrn_symbol',NULL,0,'char(15)','Quotron symbol'),
+(15,'trade_symbol',NULL,0,'char(15)','Trading symbol'),
+(16,'tax_id',NULL,0,'char(15)','Tax ID number'),
+(17,'wsj_abbr',NULL,0,'char(15)','Wall Street Journal abberviation - abbreviation defined by the WSJ to identify a fund'),
+(18,'cusip_status_ind',NULL,0,'char(1)','Status of CUSIP.  Values = 1 for temporary, and 0 for permanent'),
+(19,'qtrn_status_ind',NULL,0,'char(1)','Status of Quotron symbol. Values = 1 for temporary, and 0 for permanent'),
+(20,'legal_orgn_name',NULL,0,'char(100)','Legal Organization - the name of the trust a given fund is organized under.'),
+(21,'class_type',NULL,0,'char(1)','Class of shares.  Values = A, B, I'),
+(22,'sale_schd_no',NULL,0,'int','Sale schedule number'),
+(23,'rdmp_schd_no',NULL,0,'int','Redemption schedule number'),
+(25,'legal_name',NULL,0,'char(95)','Performance System long/legal name'),
+(26,'division_type',NULL,0,'char(2)','Division type. Values: EQ-Equity,FI-Fixed Income,HI-High Income,MM-Money Market,NA-Not Applicable'),
+(28,'end_date',NULL,0,'date(10)','Fund end date, if applicable'),
+(29,'aggr_grade',NULL,0,'varchar(15)','Lipper aggressiveness grade'),
+(30,'only_buys_funds',NULL,0,'char(1)','Indicates whether the product only buys funds (Y/N)');
+/*!40000 ALTER TABLE `MFD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MRG_Key` WRITE;
+/*!40000 ALTER TABLE `MRG_Key` DISABLE KEYS */;
+INSERT INTO `MRG_Key` VALUES 
+(1,'person_id',NULL,1,'int','Manager ID'),
+(2,'honorific',NULL,0,'varchar(5)','Title (Mr., Mrs., etc.)'),
+(3,'surname_ext',NULL,0,'varchar(10)','Surname Extension (Jr., Sr., etc.)'),
+(4,'last_name',NULL,0,'varchar(30)','Manager Last Name'),
+(5,'first_name',NULL,0,'varchar(30)','Manager First Name'),
+(6,'middle_name',NULL,0,'varchar(30)','Manager Middle Name'),
+(7,'filler',NULL,0,'char(30)',NULL),
+(8,'filler',NULL,0,'char(40)',NULL);
+/*!40000 ALTER TABLE `MRG_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MIL_Key` WRITE;
+/*!40000 ALTER TABLE `MIL_Key` DISABLE KEYS */;
+INSERT INTO `MIL_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year (as CCYY)'),
+(3,'mnth_d',NULL,1,'char(2)','Month (used in conjunction with year_d) 1=Jan, 2=Feb, ...12=Dec'),
+(4,'day_d',NULL,1,'char(2)','Day of the month  (used in conjunction with year_d and mnth_d). Valid range 1->31'),
+(5,'mil',NULL,0,'float, no rounding','Daily mil rate.'),
+(6,'mtd_mil',NULL,0,'float, no rounding','Dividend MTD mil rate - A distribution of net investment income, paid to shareholders in proportion to their share ownership.  The mil rate is accrued on a daily basis from previous month end.'),
+(7,'ytd_mil',NULL,0,'float, no rounding','The milrate is accrued on a daily basis from the previous year end.'),
+(8,'record_date',NULL,0,'datetime','Record Date - record date of the security.  The date on which a security owner must be on the books of the issuer or fund as owning the security to receive future dividends and/or interest distributions.  The date set by the corporate board of directors.'),
+(9,'reinvest_date',NULL,0,'datetime','Ex Date - The day the Board of Directors of a fund declares the amount of the distribution and deducts that amount from the funds net asset value.'),
+(10,'pay_date',NULL,0,'datetime','Pay date');
+/*!40000 ALTER TABLE `MIL_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MKT_Key` WRITE;
+/*!40000 ALTER TABLE `MKT_Key` DISABLE KEYS */;
+INSERT INTO `MKT_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year – YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month – MM'),
+(4,'price',NULL,0,'float, 4','Beginning of Month Price Value'),
+(5,'high_price_1m',NULL,0,'float, 4','NAV - 1 month high'),
+(6,'low_price_1m',NULL,0,'float, 4','NAV - 1 month low'),
+(7,'filler',NULL,0,'float(10)',NULL),
+(8,'filler',NULL,0,'float(10)',NULL),
+(9,'high_price_1y',NULL,0,'float, 4','NAV - 1 year high'),
+(10,'low_price_1y',NULL,0,'float, 4','NAV - 1 year low'),
+(11,'filler',NULL,0,'float(10)',NULL),
+(12,'filler',NULL,0,'float(10)',NULL),
+(13,'avg_price_1m',NULL,0,'float, 4','NAV - 1 month average'),
+(14,'low_price_3m',NULL,0,'float, 4','NAV - 3 month low'),
+(15,'high_price_3m',NULL,0,'float, 4','NAV - 3 month high'),
+(16,'avg_price_3m',NULL,0,'float, 4','NAV - 3 month average'),
+(17,'low_price_6m',NULL,0,'float, 4','NAV - 6 month low'),
+(18,'high_price_6m',NULL,0,'float, 4','NAV - 6 month high'),
+(19,'avg_price_6m',NULL,0,'float, 4','NAV - 6 month average'),
+(20,'avg_price_1y',NULL,0,'float, 4','NAV - 1 year average'),
+(21,'mv_avg_13w',NULL,0,'float, 2','Moving Average--13 week value'),
+(22,'mv_avg_39w',NULL,0,'float, 2','Moving Average - 39 week value'),
+(23,'mv_avg_13w_ind',NULL,0,'char(1)','Moving Average--13 week indicator'),
+(24,'mv_avg_39w_ind',NULL,0,'char(1)','Moving Average - 39 week indicator');
+/*!40000 ALTER TABLE `MKT_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MND_Key` WRITE;
+/*!40000 ALTER TABLE `MND_Key` DISABLE KEYS */;
+INSERT INTO `MND_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'filler',NULL,0,'float(40)',NULL),
+(5,'yield_30d_sec_wor',NULL,0,'float(40)','Month end 30 day yield without reimbursement'),
+(6,'yield_30d_sec',NULL,0,'float(40)','Month end SEC 30 day yield'),
+(7,'filler',NULL,0,'float(40)',NULL),
+(8,'filler',NULL,0,'int',NULL),
+(9,'filler',NULL,0,'float(40)',NULL),
+(10,'filler',NULL,0,'float(40)',NULL),
+(11,'m_end_tna',NULL,0,'float(40)','Total net assets'),
+(12,'filler',NULL,0,'float(40)',NULL),
+(13,'price',NULL,0,'float(40)','Month end net asset value'),
+(14,'offr_prc_a',NULL,0,'float(40)',NULL),
+(15,'yield_cmp_eff',NULL,0,'float(40)','Month end compound effective yield for Fidelity money market funds'),
+(16,'filler',NULL,0,'float(40)',NULL),
+(17,'yield_7d',NULL,0,'float(40)','Month end 7 day yield for Fidelity money market funds'),
+(18,'yield_7d_wor',NULL,0,'float(40)','Month end 7 day yields without reimbursement for Fidelity money market funds'),
+(19,'filler',NULL,0,'float(40)',NULL),
+(20,'avg_mat_day_a',NULL,0,'float(40)','Month end weighted average maturity in days');
+/*!40000 ALTER TABLE `MND_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MOP_Key` WRITE;
+/*!40000 ALTER TABLE `MOP_Key` DISABLE KEYS */;
+INSERT INTO `MOP_Key` VALUES 
+(1,'person_id',NULL,1,'int','Manager ID'),
+(2,'type_c',NULL,1,'char(5)','Type of occupation that Fund Manager has held.'),
+(3,'strt_date_yr_d',NULL,0,'int','Prior position start date year (CCYY)'),
+(4,'strt_date_mnth_d',NULL,0,'int','Prior/concurrent position start date month (1-12)'),
+(5,'strt_date_day_d',NULL,0,'int','Prior/concurrent position start date day (1-31) (This field does not appear to be pulling correctly)'),
+(6,'end_date_yr_d',NULL,0,'int','Prior/concurrent position end date year (CCYY); this field is blank if the position is current.'),
+(7,'end_date_mnth_d',NULL,0,'int','Prior/concurrent position end date month (1-12); this field is blank if the position is current.'),
+(8,'end_date_day_d',NULL,0,'int','Prior/concurrent position end date day (1-31); this field is blank if the position is current  (This field does not appear to be pulling correctly)'),
+(9,'ocpt_x',NULL,0,'char(75)','Identified the prior/concurrent positions of a given fund manager');
+/*!40000 ALTER TABLE `MOP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MRL_Key` WRITE;
+/*!40000 ALTER TABLE `MRL_Key` DISABLE KEYS */;
+INSERT INTO `MRL_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'person_id',NULL,1,'int','Manger ID'),
+(3,'st_year_d',NULL,1,'char(4)','Start Date Year - YYYY'),
+(4,'st_mnth_d',NULL,1,'char(2)','Start Date Month - MM'),
+(5,'st_day_d',NULL,1,'char(2)','Start Date Day - DD'),
+(6,'start_date_ind',NULL,0,'char(1)','Start Date Indicator  (R – Real, P- Proxy)'),
+(7,'end_year_d',NULL,0,'char(4)','End Date Year - YYYY'),
+(8,'end_mnth_d',NULL,0,'char(2)','End Date Month - MM'),
+(9,'end_day_d',NULL,0,'char(2)','End Date Day - DD'),
+(10,'end_date_ind',NULL,0,'char(1)','End Date Indicator  (R – Real, P- Proxy)'),
+(11,'tenure_year_d',NULL,0,'char(4)','Tenure Date Year - YYYY'),
+(12,'tenure_mnth_d',NULL,0,'char(2)','Tenure Date Month - MM'),
+(13,'tenure_day_d',NULL,0,'char(2)','Tenure Date Day -  DD'),
+(14,'role_ind',NULL,0,'char(2)','Role Indicator. Values: C-Co-Manager, L-Lead Manager, P-Primary Manager, CP-Co-Manager Primary'),
+(15,'mgd_invest_type',NULL,0,'varchar(20)','Managed Investment Type. Values: EQ-Equity Investment, FI-Fixed Income, HI-High Income Investment, MM-Money Market Investment, DOM-Domestic Investment, FOR-Foreign Investment, HEDGE-Hedged Investment,RE-Real Estate Investment, ST-Short Term Investment, NA-Not Applicable, XCIO-Exclude from CIO grouping (Do Not Use)');
+/*!40000 ALTER TABLE `MRL_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `MSA_Key` WRITE;
+/*!40000 ALTER TABLE `MSA_Key` DISABLE KEYS */;
+INSERT INTO `MSA_Key` VALUES 
+(1,'acct_num',NULL,1,'CHAR (20)','Account Number'),
+(2,'std_rtn_dt',NULL,1,'CHAR (8)','Standard Return Date'),
+(3,'acct_name',NULL,0,'CHAR (80)','Account Name'),
+(4,'inception_date',NULL,0,'CHAR (8)','Account Inception Date'),
+(5,'model_cd',NULL,0,'CHAR (20)','Model Code'),
+(6,'1M_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 1 Month Cuml Pre-Tax Return Gross'),
+(7,'1M_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 1 Month Cuml Pre-Tax Return Net'),
+(8,'3M_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 3 Month Cuml Pre-Tax Return Gross'),
+(9,'3M_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 3 Month Cuml Pre-Tax Return Net'),
+(10,'6M_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 6 Month Cuml Pre_Tax Return Gross'),
+(11,'6M_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 6 Month Cuml Pre-Tax Return Net'),
+(12,'9M_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 9 Month Cuml Pre-Tax Return Gross'),
+(13,'9M_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 9 Month Cuml Pre-Tax Return Net'),
+(14,'YTD_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model YTD Cuml Pre-Tax Return Gross'),
+(15,'YTD_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model YTD Cuml Pre-Tax Return Net'),
+(16,'1Y_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 1 Year Cuml Pre-Tax Return Gross'),
+(17,'1Y_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 1 Year Cuml Pre-Tax Return Net'),
+(18,'3Y_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 3 Year Cuml Pre-Tax Return Gross'),
+(19,'3Y_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 3 Year Cuml Pre-Tax Return Net'),
+(20,'5Y_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 5 Year Cuml Pre-Tax Return Gross'),
+(21,'5Y_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 5 Year Cuml Pre-Tax Return Net'),
+(22,'10Y_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 10 Year Cuml Pre-Tax Return Gross'),
+(23,'10Y_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 10 Year Cuml Pre-Tax Return Net'),
+(24,'LOF_SDA_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model LOF Cuml Pre-Tax Return Gross'),
+(25,'LOF_SDA_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model LOF Cuml Pre-Tax Return Net'),
+(26,'1Y_ANN_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 1 Year Annl Pre-Tax Return Gross'),
+(27,'1Y_ANN_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 1 Year Annl Pre-Tax Return Net'),
+(28,'3Y_ANN_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 3 Year Annl Pre-Tax Return Gross'),
+(29,'3Y_ANN_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 3 Year Annl Pre-Tax Return Net'),
+(30,'5Y_ANN_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 5 Year Annl Pre-Tax Return Gross'),
+(31,'5Y_ANN_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 5 Year Annl Pre-Tax Return Net'),
+(32,'10Y_ANN_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model 10 Year Annl Pre-Tax Return Gross'),
+(33,'10Y_ANN_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model 10 Year Annl Pre-Tax Return Net'),
+(34,'LOF_SDA_ANN_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Model LOF Annl Pre-Tax Return Gross'),
+(35,'LOF_SDA_ANN_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Model LOF Annl Pre-Tax Return Net'),
+(36,'1Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 1 Cumulative Calendar Year Returns Gross'),
+(37,'1Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 1 Cumulative Calendar Year Returns Net'),
+(38,'2Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 2 Cumulative Calendar Year Returns Gross'),
+(39,'2Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 2 Cumulative Calendar Year Returns Net'),
+(40,'3Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 3 Cumulative Calendar Year Returns Gross'),
+(41,'3Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 3 Cumulative Calendar Year Returns Net'),
+(42,'4Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 4 Cumulative Calendar Year Returns Gross'),
+(43,'4Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 4 Cumulative Calendar Year Returns Net'),
+(44,'5Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 5 Cumulative Calendar Year Returns Gross'),
+(45,'5Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 5 Cumulative Calendar Year Returns Net'),
+(46,'6Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 6 Cumulative Calendar Year Returns Gross'),
+(47,'6Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 6 Cumulative Calendar Year Returns Net'),
+(48,'7Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 7 Cumulative Calendar Year Returns Gross'),
+(49,'7Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 7 Cumulative Calendar Year Returns Net'),
+(50,'8Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 8 Cumulative Calendar Year Returns Gross'),
+(51,'8Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 8 Cumulative Calendar Year Returns Net'),
+(52,'9Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 9 Cumulative Calendar Year Returns Gross'),
+(53,'9Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 9 Cumulative Calendar Year Returns Net'),
+(54,'10Y_PRIOR_CUM_PRE_TAX_RTN_GRS',NULL,0,'FLOAT (16)','Prior Year 10 Cumulative Calendar Year Returns Gross'),
+(55,'10Y_PRIOR_CUM_PRE_TAX_RTN_NET',NULL,0,'FLOAT (16)','Prior Year 10 Cumulative Calendar Year Returns Net');
+/*!40000 ALTER TABLE `MSA_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `NAL_Key` WRITE;
+/*!40000 ALTER TABLE `NAL_Key` DISABLE KEYS */;
+INSERT INTO `NAL_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'mod_date',NULL,1,'date(10)','Date a NAV was updated'),
+(3,'year_d',NULL,1,'int','Year (CCYY)'),
+(4,'mnth_d',NULL,1,'int','Month (1-12)'),
+(5,'col_name',NULL,1,'char(32)','NAV Type: mnth_high_prc = NAV – 1 month high, mnth_low_prc = NAV – 1 month low, nav_a = price, one_m_avg = NAV – 1 month average, six_m_avg = NAV – 6 month average, six_m_hi = NAV – 6 month high, six_m_low = NAV - 6 month low, three_m_avg = NAV – 3 month average,three_m_hi = NAV – 3 month high, three_m_low = NAV – 3 month low, twlv_m_avg = NAV – 1 year average, twlv_m_high = NAV – 1 year high, twlv_m_low = NAV – 1 year low'),
+(6,'orig_value',NULL,1,'float(40)','Original value'),
+(7,'repl_val',NULL,0,'float(40)','New value');
+/*!40000 ALTER TABLE `NAL_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `OBI_Key` WRITE;
+/*!40000 ALTER TABLE `OBI_Key` DISABLE KEYS */;
+INSERT INTO `OBI_Key` VALUES 
+(1,'lipper_obj',NULL,1,'Char(5)','Lipper Objective type code for competitive ranking'),
+(2,'prim_index_id',NULL,0,'Char(5)','Primary Base Index'),
+(3,'sec_index_id',NULL,0,'Char(50','Secondary Base Index');
+/*!40000 ALTER TABLE `OBI_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `OTD_Key` WRITE;
+/*!40000 ALTER TABLE `OTD_Key` DISABLE KEYS */;
+INSERT INTO `OTD_Key` VALUES 
+(1,'code',NULL,1,'char(5)','Lipper objective type code for competitive ranking.'),
+(2,'short_label',NULL,0,'char(50)','Lipper objective type code description.');
+/*!40000 ALTER TABLE `OTD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `PYM_Key` WRITE;
+/*!40000 ALTER TABLE `PYM_Key` DISABLE KEYS */;
+INSERT INTO `PYM_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'spp_amt_per_share',NULL,0,'float','SPP Redemption – Per Share Amount'),
+(3,'spp_record_date',NULL,0,'date(8)','SPP Redemption – Record Date (YYYYMMDD)'),
+(4,'spp_payable_date',NULL,0,'date(8)','SPP Redemption – Record Date (YYYYMMDD)'),
+(5,'spp_amt_per_share',NULL,0,'float','Monthly Target Payment – Per Share Amount'),
+(6,'spp_record_date',NULL,0,'date(8)','Monthly Target Payment – Record Date (YYYYMMDD)'),
+(7,'spp_payable_date',NULL,0,'date(8)','Monthly Target Payment – Payable Date (YYYYMMDD)');
+/*!40000 ALTER TABLE `PYM_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `RNC_Key` WRITE;
+/*!40000 ALTER TABLE `RNC_Key` DISABLE KEYS */;
+INSERT INTO `RNC_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'day_d',NULL,1,'int','Day (1-31)'),
+(6,'obj_type_c',NULL,0,'varchar(30)','Lipper classification peer group name'),
+(7,'rank_ytd',NULL,0,'int','Fund as ranked for YTD'),
+(8,'cnt_ytd',NULL,0,'int','Number of funds in competitive universe for YTD'),
+(9,'rank_1m',NULL,0,'int','Fund as ranked for 1 month'),
+(10,'cnt_1m',NULL,0,'int','Number of funds in competitive universe for 1 month'),
+(11,'rank_3m',NULL,0,'int','Fund as ranked for 3 months'),
+(12,'cnt_3m',NULL,0,'int','Number if funds in competitive universe for 3 months'),
+(13,'rank_6m',NULL,0,'int','Fund as ranked for 6 months'),
+(14,'cnt_6m',NULL,0,'int','Number of funds in competitive universe for 6 months'),
+(15,'rank_1y',NULL,0,'int','Fund as ranked for 1 year'),
+(16,'cnt_1y',NULL,0,'int','Number of funds in competitive universe for 1 year'),
+(17,'rank_2y',NULL,0,'int','Fund as ranked for 2 years'),
+(18,'cnt_2y',NULL,0,'int','Number of funds in competitive universe for 2 years'),
+(19,'rank_3y',NULL,0,'int','Fund as ranked for 3 years'),
+(20,'cnt_3y',NULL,0,'int','Number of funds in competitive universe for 3 years'),
+(21,'rank_5y',NULL,0,'int','Fund as ranked for 5 years'),
+(22,'cnt_5y',NULL,0,'int','Number of funds in competitive universe for 5 years'),
+(23,'rank_10y',NULL,0,'int','Fund as ranked for 10 years'),
+(24,'cnt_10y',NULL,0,'int','Number of funds in competitive universe for 10 years'),
+(25,'pct_beaten_ytd',NULL,0,'float','YTD percent beaten (format 999)'),
+(26,'pct_beaten_1m',NULL,0,'float','1 month percent beaten (format 999)'),
+(27,'pct_beaten_3m',NULL,0,'float','3 month percent beaten (format 999)'),
+(28,'pct_beaten_6m',NULL,0,'float','6 month percent beaten (format 999)'),
+(29,'pct_beaten_1y',NULL,0,'float','1 year percent beaten (format 999)'),
+(30,'pct_beaten_2y',NULL,0,'float','2 year percent beaten (format 999)'),
+(31,'pct_beaten_3y',NULL,0,'float','3 year percent beaten (format 999)'),
+(32,'pct_beaten_5y',NULL,0,'float','5 year percent beaten (format 999)'),
+(33,'pct_beaten_10y',NULL,0,'float','10 year percent beaten (format 999)');
+/*!40000 ALTER TABLE `RNC_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `RNK_Key` WRITE;
+/*!40000 ALTER TABLE `RNK_Key` DISABLE KEYS */;
+INSERT INTO `RNK_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'day_d',NULL,1,'int','Day (1-31)'),
+(5,'fi_clss_id',NULL,0,'char(1)','Class of fund (B = Lipper universe)'),
+(6,'obj_type_c',NULL,0,'char(5)','Lipper objective type code for competitive ranking'),
+(7,'rank_ytd',NULL,0,'int','Fund as ranked for YTD'),
+(8,'cnt_ytd',NULL,0,'int','Number of funds in competitive universe for YTD'),
+(9,'rank_1m',NULL,0,'int','Fund as ranked for 1 month'),
+(10,'cnt_1m',NULL,0,'int','Number of funds in competitive universe for 1 month'),
+(11,'rank_3m',NULL,0,'int','Fund as ranked for 3 months'),
+(12,'cnt_3m',NULL,0,'int','Number if funds in competitive universe for 3 months'),
+(13,'rank_6m',NULL,0,'int','Fund as ranked for 6 months'),
+(14,'cnt_6m',NULL,0,'int','Number of funds in competitive universe for 6 months'),
+(15,'rank_1y',NULL,0,'int','Fund as ranked for 1 year'),
+(16,'cnt_1y',NULL,0,'int','Number of funds in competitive universe for 1 year'),
+(17,'rank_2y',NULL,0,'int','Fund as ranked for 2 years'),
+(18,'cnt_2y',NULL,0,'int','Number of funds in competitive universe for 2 years'),
+(19,'rank_3y',NULL,0,'int','Fund as ranked for 3 years'),
+(20,'cnt_3y',NULL,0,'int','Number of funds in competitive universe for 3 years'),
+(21,'rank_5y',NULL,0,'int','Fund as ranked for 5 years'),
+(22,'cnt_5y',NULL,0,'int','Number of funds in competitive universe for 5 years'),
+(23,'rank_10y',NULL,0,'int','Fund as ranked for 10 years'),
+(24,'cnt_10y',NULL,0,'int','Number of funds in competitive universe for 10 years'),
+(25,'pct_beaten_ytd',NULL,0,'float','YTD percent beaten'),
+(26,'pct_beaten_1m',NULL,0,'float','1 month percent beaten'),
+(27,'pct_beaten_3m',NULL,0,'float','3 month percent beaten'),
+(28,'pct_beaten_6m',NULL,0,'float','6 month percent beaten'),
+(29,'pct_beaten_1y',NULL,0,'float','1 year percent beaten'),
+(30,'pct_beaten_2y',NULL,0,'float','2 year percent beaten'),
+(31,'pct_beaten_3y',NULL,0,'float','3 year percent beaten'),
+(32,'pct_beaten_5y',NULL,0,'float','5 year percent beaten'),
+(33,'pct_beaten_10y',NULL,0,'float','10 year percent beaten');
+/*!40000 ALTER TABLE `RNK_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `SHD_Key` WRITE;
+/*!40000 ALTER TABLE `SHD_Key` DISABLE KEYS */;
+INSERT INTO `SHD_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'dist_ind',NULL,1,'char(2)','Which type of schedule. Values: DV- Dividend, CG - Capital Gain'),
+(3,'dist_month',NULL,1,'int','Month (1-12) For DV, this indicates the month in which dividends occur. For CG, this indicates the frequency with which capital gains are distributed.');
+/*!40000 ALTER TABLE `SHD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `STB_Key` WRITE;
+/*!40000 ALTER TABLE `STB_Key` DISABLE KEYS */;
+INSERT INTO `STB_Key` VALUES 
+(1,'fund_id',NULL,1,'char(5)','The Performance System Fund Identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day - DD'),
+(5,'cum_mtd',NULL,0,'float, 2','Cumulative Return--MTD, no-load'),
+(6,'cum_ytd',NULL,0,'float, 2','Cumulative Return--YTD, no-load'),
+(7,'cum_lof',NULL,0,'float, 2','Cumulative Return--LOF, no-load'),
+(8,'cum_qtd',NULL,0,'float, 2','Cumulative Return – QTD, no load'),
+(9,'cum_r1m',NULL,0,'float, 2','Cumulative Return – Rolling 1 Month, no load'),
+(10,'cum_r3m',NULL,0,'float, 2','Cumulative Return – Rolling 3 Month, no load'),
+(11,'cum_1d',NULL,0,'float','Cumulative 1 day return (format is two decimal places)');
+/*!40000 ALTER TABLE `STB_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `STF_Key` WRITE;
+/*!40000 ALTER TABLE `STF_Key` DISABLE KEYS */;
+INSERT INTO `STF_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year – YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day – DD'),
+(5,'cum_mtd',NULL,0,'float, 2','Cumulative Return--MTD, no-load'),
+(6,'cum_ytd',NULL,0,'float, 2','Cumulative Return--YTD, no-load'),
+(7,'cum_lof',NULL,0,'float, 2','Cumulative Return--LOF, no-load'),
+(8,'cum_qtd',NULL,0,'float, 2','Cumulative Return – QTD, no load'),
+(9,'cum_r1m',NULL,0,'float, 2','Cumulative Return – Rolling 1 Month, no load'),
+(10,'cum_r3m',NULL,0,'float, 2','Cumulative Return – Rolling 3 Month, no load'),
+(11,'cum_1d',NULL,0,'float','Cumulative 1 day return (format is two decimal places)');
+/*!40000 ALTER TABLE `STF_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `TEY_Key` WRITE;
+/*!40000 ALTER TABLE `TEY_Key` DISABLE KEYS */;
+INSERT INTO `TEY_Key` VALUES 
+(1,'sas_id',NULL,1,'char(10)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (as CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (used in conjunction with year_d) 1=Jan, 2=Feb, ... 12=Dec'),
+(4,'day_d',NULL,1,'int','Day of the month (used in conjunction with year_d and mnth_d). Valid range 1->31'),
+(5,'tax_equiv_yld_25',NULL,0,'float(40)','Tax Equivialent Yield at 25%'),
+(6,'tax_equiv_yld_28',NULL,0,'float(40)','Tax Equivialent Yield at 28%'),
+(7,'tax_equiv_yld_36',NULL,0,'float(40)','Tax Equivialent Yield at 33%'),
+(8,'tax_equiv_yld_35',NULL,0,'float(40)','Tax Equivialent Yield at 35%');
+/*!40000 ALTER TABLE `TEY_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `TNA_Key` WRITE;
+/*!40000 ALTER TABLE `TNA_Key` DISABLE KEYS */;
+INSERT INTO `TNA_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day - DD'),
+(5,'tna',NULL,0,'float, no rounding','Total Net Assets');
+/*!40000 ALTER TABLE `TNA_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `UAN_Key` WRITE;
+/*!40000 ALTER TABLE `UAN_Key` DISABLE KEYS */;
+INSERT INTO `UAN_Key` VALUES 
+(1,'code',NULL,1,'int','User assigned name ID - the ID of the fee schedule or disclosure statement'),
+(2,'short_label',NULL,1,'char(5)','Values: SALES-Sales schedule,REDMP-Redemption'),
+(3,'long_label',NULL,0,'char(30)','Name assigned is associated with a fee schedule or disclosure statement.');
+/*!40000 ALTER TABLE `UAN_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `VPP_Key` WRITE;
+/*!40000 ALTER TABLE `VPP_Key` DISABLE KEYS */;
+INSERT INTO `VPP_Key` VALUES 
+(1,'accdiv_c',NULL,1,'char(5)','Account Division Code'),
+(2,'year_d',NULL,0,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,0,'char(2)','Month - MM'),
+(4,'annuity_id',NULL,0,'char(5)','Annuity Id'),
+(5,'trad_symb',NULL,0,'char(5)','Trade Symbol'),
+(6,'yld_sec_30d_n',NULL,0,'float(40)','30 Day SEC Yield before Surrender Charges net of annuity charges'),
+(7,'yld_sec_30d_l',NULL,0,'float(40)','30 Day SEC Yield after Surrender Charges.  Will be blank.'),
+(8,'lipper_group_id',NULL,0,'char(5)','Lipper Peer Group Id.  Will be blank.'),
+(9,'rank_1y',NULL,0,'Int','Product  rank for 1 year according to Lipper.  Will be blank.'),
+(10,'cnt_1y',NULL,0,'Int','Number of products in competitive universe for 1 year according to Lipper.  Will be blank.'),
+(11,'rank_5y',NULL,0,'int','Product rank for 5 years according to Lipper.  Will be blank.'),
+(12,'cnt_5y',NULL,0,'Int','Number of products in competitive universe for 1 year according to Lipper.  Will be blank.'),
+(13,'rank_10y',NULL,0,'int','Product  rank for 10 years according to Lipper.  Will be blank.'),
+(14,'cnt_10y',NULL,0,'int','Number of products in competitive universe for 10 years according to Lipper.  Will be blank.'),
+(15,'yld_7day_pct_n',NULL,0,'float(40)','7 Day Yield before Surrender Charges.  Will be blank.'),
+(16,'yld_7day_pct_l',NULL,0,'float(40)','7 Day Yield after Surrender Charges.   Will be blank.'),
+(17,'aa_1y_n',NULL,0,'float, 2','1 year Average Annual return before Surrender Charges'),
+(18,'aa_3y_n',NULL,0,'float, 2','3 year Average Annual return before Surrender Charges'),
+(19,'aa_5y_n',NULL,0,'float, 2','5 year Average Annual return before Surrender Charges'),
+(20,'aa_10y_n',NULL,0,'float, 2','10 year Average Annual return before Surrender Charges'),
+(21,'aa_lof_n',NULL,0,'float, 2','Life of fund  Average Annual return before Surrender Charges'),
+(22,'aa_1y_l',NULL,0,'float, 2','1 year Average Annual return after Surrender Charges'),
+(23,'aa_3y_l',NULL,0,'float, 2','3 year Average Annual return after Surrender Charges'),
+(24,'aa_5y_l',NULL,0,'float, 2','5 year Average Annual return after  Surrender Charges'),
+(25,'aa_10y_l',NULL,0,'float, 2','10 year Average Annual return after Surrender Charges'),
+(26,'aa_lof_l',NULL,0,'float, 2','Life of fund  Average Annual return after Surrender Charges'),
+(27,'aa_1y_sl',NULL,0,'float, 2','1 year Average Annual return of the FILI sub account after Surrender Charges'),
+(28,'aa_3y_sl',NULL,0,'float, 2','3 year Average Annual return of the FILI sub account after Surrender Charges'),
+(29,'aa_5y_sl',NULL,0,'float, 2','5 year Average Annual return of the FILI sub account after  Surrender Charges'),
+(30,'aa_10y_sl',NULL,0,'float, 2','10 year Average Annual return of the FILI sub account after Surrender Charges'),
+(31,'aa_lof_sl',NULL,0,'float, 2','Life of fund  Average Annual return of the FILI sub account after Surrender Charges'),
+(32,'aa_1y_sn',NULL,0,'float, 2','1 year Average Annual return of the FILI sub account before Surrender Charges'),
+(33,'aa_3y_sn',NULL,0,'float, 2','3 year Average Annual return of the FILI sub account before Surrender Charges'),
+(34,'aa_5y_sn',NULL,0,'float, 2','5 year Average Annual return of the FILI sub account before  Surrender Charges'),
+(35,'aa_10y_sn',NULL,0,'float, 2','10 year Average Annual return of the FILI sub account before Surrender Charges'),
+(36,'aa_lof_sn',NULL,0,'float, 2','Life of fund  Average Annual return of the FILI sub account before Surrender Charges'),
+(37,'cum_ytd_n',NULL,0,'float, 2','Cumulative YTD return before Surrender Charges'),
+(38,'cum_1m_n',NULL,0,'float, 2','Cumulative 1 month return before Surrender Charges'),
+(39,'cum_3m_n',NULL,0,'float, 2','Cumulative 3 month return before Surrender Charges'),
+(40,'cum_6m_n',NULL,0,'float, 2','Cumulative 6 month return before Surrender Charges'),
+(41,'cum_1y_n',NULL,0,'float, 2','Cumulative 1 year return before Surrender Charges'),
+(42,'cum_3y_n',NULL,0,'float, 2','Cumulative 3 year return before Surrender Charges'),
+(43,'cum_5y_n',NULL,0,'float, 2','Cumulative 5 year return before Surrender Charges'),
+(44,'cum_10y_n',NULL,0,'float, 2','Cumulative 10 year return before Surrender Charges'),
+(45,'cum_lof_n',NULL,0,'float, 2','Cumulative Life of fund return before Surrender Charges'),
+(46,'cum_lof_sl',NULL,0,'float, 2','Cumulative Life of fund return of the FILI sub account after Surrender Charges'),
+(47,'cum_lof_sn',NULL,0,'float, 2','Cumulative Life of fund  return of the FILI sub account before Surrender Charges'),
+(48,'mv_avg_13w',NULL,0,'float, 2','13 week moving average value'),
+(49,'mv_avg_39w',NULL,0,'float, 2','39 week moving average value');
+/*!40000 ALTER TABLE `VPP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `VSP_Key` WRITE;
+/*!40000 ALTER TABLE `VSP_Key` DISABLE KEYS */;
+INSERT INTO `VSP_Key` VALUES 
+(1,'accdiv_c',NULL,1,'char(5)','Account Division Code'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'int','Day of the month (used in conjunction with year_d and mnth_d). Valid range 1->31'),
+(5,'annuity_id',NULL,0,'char(5)','Annuity Id'),
+(6,'trad_symb',NULL,0,'char(5)','Trade Symbol'),
+(7,'cum_mtd',NULL,0,'float, 2','Cumulative Return--MTD, no-load'),
+(8,'cum_ytd',NULL,0,'float, 2','Cumulative Return--YTD, no-load'),
+(9,'cum_lof',NULL,0,'float, 2','Cumulative Return--LOF, no-load'),
+(10,'cum_qtd',NULL,0,'float, 2','Cumulative Return – QTD, no load'),
+(11,'cum_r1m',NULL,0,'float, 2','Cumulative Return – Rolling 1 Month, no load'),
+(12,'cum_r3m',NULL,0,'float, 2','Cumulative Return – Rolling 3 Month, no load'),
+(13,'cum_1d',NULL,0,'float, 2','Cumulative Return – 1 day return, no load');
+/*!40000 ALTER TABLE `VSP_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `VYD_Key` WRITE;
+/*!40000 ALTER TABLE `VYD_Key` DISABLE KEYS */;
+INSERT INTO `VYD_Key` VALUES 
+(1,'accdiv_c',NULL,1,'char(5)','Account Division Code'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'int','Day of the month (used in conjunction with year_d and mnth_d). Valid range 1->31'),
+(5,'annuity_id',NULL,0,'char(5)','Annuity Id'),
+(6,'trad_symb',NULL,0,'char(5)','Trade Symbol'),
+(7,'avg_mat_day_a',NULL,0,'float(40)','Average Maturity in days. – N/A for this file'),
+(8,'filler',NULL,0,'float(40)',NULL),
+(9,'filler',NULL,0,'date(10)',NULL),
+(10,'filler',NULL,0,'float(40)',NULL),
+(11,'filler',NULL,0,'float(40)',NULL),
+(12,'offr_prc_a',NULL,0,'float(40)','Offer price. – N/A for this file'),
+(13,'filler',NULL,0,'float(40)',NULL),
+(14,'filler',NULL,0,'float(40)',NULL),
+(15,'filler',NULL,0,'float(40)',NULL),
+(16,'filler',NULL,0,'float(40)',NULL),
+(17,'filler',NULL,0,'float(40)',NULL),
+(18,'filler',NULL,0,'float(40)',NULL),
+(19,'filler',NULL,0,'float(40)',NULL),
+(20,'filler',NULL,0,'float(40)',NULL),
+(21,'filler',NULL,0,'float(40)',NULL),
+(22,'filler',NULL,0,'int',NULL),
+(23,'filler',NULL,0,'float(40)',NULL),
+(24,'yield_7d',NULL,0,'float(2) (rounded)','Money Market Seven Day Yield'),
+(25,'filler',NULL,0,'float(40)',NULL),
+(26,'yield_30d_sec',NULL,0,'float(40)','SEC Thirty Day Yield – N/A for this file'),
+(27,'yield_cmp_eff',NULL,0,'float(40)','Compound effective Yield – N/A for this file')
+/*!40000 ALTER TABLE `VYD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `WAM_Key` WRITE;
+/*!40000 ALTER TABLE `WAM_Key` DISABLE KEYS */;
+INSERT INTO `WAM_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'int','Year (CCYY)'),
+(3,'mnth_d',NULL,1,'int','Month (1-12)'),
+(4,'day_d',NULL,1,'int','Day (1-31)'),
+(5,'maturity_type',NULL,1,'char(5)','Type code; Values:AVG-Average maturity (Current),DUR-Duration - Actual,EFF-Effective maturity,WAL-	Weighted Average Life'),
+(6,'maturity_unit',NULL,1,'char(1)','Unit code; Values: Y-Years,D-Days,'),
+(7,'maturity',NULL,0,'float(40)','Where maturity_type = AVG, the average period of time remaining until the principal is repaid on the securities held by the fund. Where maturity_type = DUR, the average time it takes to receive all cash flows associated with the securities held by the fund (includes interest and principal). Where maturity_type = EFF, calculated using the call dates of bonds trading above par and the stated maturity of binds trading at or below par.');
+/*!40000 ALTER TABLE `WAM_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+LOCK TABLES `YLD_Key` WRITE;
+/*!40000 ALTER TABLE `YLD_Key` DISABLE KEYS */;
+INSERT INTO `YLD_Key` VALUES 
+(1,'sas_id',NULL,1,'char(5)','Shareholder Accounting System identifier'),
+(2,'year_d',NULL,1,'char(4)','Year - YYYY'),
+(3,'mnth_d',NULL,1,'char(2)','Month - MM'),
+(4,'day_d',NULL,1,'char(2)','Day - DD'),
+(5,'yield_1d',NULL,0,'float, no rounding','Money Market one day yield'),
+(6,'yield_30d',NULL,0,'float, no rounding','Money Market thirty day yield');
+/*!40000 ALTER TABLE `YLD_Key` ENABLE KEYS */;
+UNLOCK TABLES;
+
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2015-02-04 11:15:30')

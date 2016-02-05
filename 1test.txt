@@ -1,0 +1,6 @@
+INSERT INTO `ltm` (`sas_id`, `year_d`, `mnth_d`, `ret_ind`, `cum_ytd`, `cum_1m`, `cum_3m`, `cum_6m`, `cum_9m`, `cum_1y`, `cum_2y`, `cum_3y`, `cum_4y`, `cum_5y`, `cum_6y`, `cum_7y`, `cum_8y`, `cum_9y`, `cum_10y`, `cum_lof`, `aa_1y`, `aa_2y`, `aa_3y`, `aa_4y`, `aa_5y`, `aa_6y`, `aa_7y`, `aa_8y`, `aa_9y`, `aa_10y`, `aa_lof`) VALUES
+('7', 2012, 11, 'N', 11.63, 1.45, -6.21, 1.09, -7.29, 9.14, 11.97, 42.86, 138.64, 24.84, 51.96, 65.46, 76.84, 64.33, 135.18, 1842.43, 9.14, 5.81, 12.63, 24.29, 4.54, 7.22, 7.46, 7.39, 5.67, 8.93, 11.45),
+('7', 2012, 11, 'Y', NULL, 0.69, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('8', 2012, 11, 'N', -0.43, 3.67, -6.36, -2.89, -17.4, -2.32, -0.4, 21.57, 107.26, -1.21, 0.78, 3.78, 25.16, 7.4, 46.67, 1103.67, -2.32, -0.2, 6.73, 19.99, -0.24, 0.13, 0.53, 2.85, 0.8, 3.9, 9.52),
+('8', 2012, 11, 'Y', NULL, 2.9, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+('9', 2012, 11, 'N', 17.54, 3.15, 3.87, 13.32, 11.56, 19.84, 34.44, 47.8, 83.65, 37.63, 73.08, 104.32, 123.88, 152.83, 182.75, 2934.1, 19.84, 15.95, 13.91, 16.41, 6.6, 9.57, 10.75, 10.6, 10.86, 10.95, 13.28)
